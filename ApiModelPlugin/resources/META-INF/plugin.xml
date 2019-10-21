@@ -1,0 +1,33 @@
+<idea-plugin>
+    <id>com.vsoontech.plugin</id>
+    <name>ApiModelPlugin</name>
+    <version>1.0.1</version>
+    <vendor email="support@www.vsoontech.com" url="http://www.vsoontech.com">Vsoontech</vendor>
+
+    <description><![CDATA[
+        Android 终端-接口文档对应（ *.req  *.resp ）,创建 Model 实体类插件
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <action id="VsoontechPlugin.AmGenerateAction" class="com.vsoontech.plugin.AmGenerateAction" text="Model Assign"
+                description="*Rsp;*Req To Model.java">
+            <add-to-group group-id="GenerateGroup" anchor="first"/>
+        </action>
+
+        <action id="VsoontechPlugin.AmNewClassAction" class="com.vsoontech.plugin.AmNewClassAction"
+                text="New ModelClass Assign"
+                description="*Rsp;*Req To Model.java">
+            <add-to-group group-id="NewGroup1" relative-to-action="NewClass" anchor="after"/>
+        </action>
+    </actions>
+</idea-plugin>

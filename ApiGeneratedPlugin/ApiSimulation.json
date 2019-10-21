@@ -1,0 +1,441 @@
+{
+  "apiGroupList": [
+    {
+      "apiDetailList": [
+        {
+          "desc": "获取直播课程列表",
+          "domain": "mobile.owl.duoduokankan.com",
+          "httpType": "GET",
+          "httpUrl": "/v3/owlm/live_course_list",
+          "params": {
+            "obj": [
+              {
+                "desc": "年级",
+                "name": "grade",
+                "notNull": true,
+                "type": "int"
+              },
+              {
+                "desc": "开课时间",
+                "name": "openTime",
+                "notNull": true,
+                "type": "string"
+              },
+              {
+                "desc": "课程名称",
+                "name": "title",
+                "notNull": true,
+                "type": "string"
+              },
+              {
+                "desc": "是否启用优惠价 [true - 用, false - 不用",
+                "name": "isDiscount",
+                "notNull": true,
+                "type": "enum-string"
+              }
+            ]
+          },
+          "purchased": [
+            {
+              "desc": "课程id",
+              "name": "liveCourseId",
+              "notNull": true,
+              "type": "int"
+            },
+            {
+              "desc": "科目",
+              "name": "subject",
+              "notNull": true,
+              "type": "string"
+            },
+            {
+              "desc": "是否神",
+              "name": "isGod",
+              "notNull": true,
+              "type": "boolean"
+            }
+          ],
+          "recommend": [
+            {
+              "desc": "开课时间",
+              "name": "openTime",
+              "notNull": true,
+              "type": "string"
+            },
+            {
+              "desc": "课程名称",
+              "name": "title",
+              "notNull": true,
+              "type": "string"
+            },
+            {
+              "desc": "是否启用优惠价 [true - 用, false - 不用",
+              "name": "isDiscount",
+              "notNull": true,
+              "type": "enum-string"
+            },
+            {
+              "desc": "教师列表",
+              "name": "teacherList",
+              "notNull": true,
+              "target": "teacher",
+              "type": "array-object"
+            },
+            {
+              "desc": "教授 --- 测试重用对象",
+              "name": "proList",
+              "notNull": true,
+              "target": "teacher",
+              "type": "object"
+            }
+          ],
+          "response": {
+            "obj": [
+              {
+                "desc": "购买列表",
+                "name": "purchasedList",
+                "notNull": true,
+                "target": "purchased",
+                "type": "array-object"
+              },
+              {
+                "desc": "推荐列表",
+                "name": "recommendList",
+                "notNull": true,
+                "target": "recommend",
+                "type": "array-object"
+              }
+            ]
+          },
+          "teacher": [
+            {
+              "desc": "1主讲老师  2辅导老师",
+              "name": "type",
+              "notNull": true,
+              "type": "int"
+            },
+            {
+              "desc": "老师名字",
+              "name": "name",
+              "notNull": true,
+              "type": "string"
+            }
+          ],
+          "version": 123
+        },
+        {
+          "desc": "获取直播课程列表2",
+          "domain": "mobile.owl.duoduokankan.com",
+          "httpType": "GET",
+          "httpUrl": "/v3/owlm/live_course_list2",
+          "params": {
+            "obj": [
+              {
+                "desc": "年级",
+                "name": "grade",
+                "notNull": true,
+                "type": "int"
+              },
+              {
+                "desc": "开课时间",
+                "name": "openTime",
+                "notNull": true,
+                "type": "string"
+              },
+              {
+                "desc": "课程名称",
+                "name": "title",
+                "notNull": true,
+                "type": "string"
+              },
+              {
+                "desc": "是否启用优惠价 [true - 用, false - 不用",
+                "name": "isDiscount",
+                "notNull": true,
+                "type": "enum-string"
+              }
+            ]
+          },
+          "purchased": [
+            {
+              "desc": "课程id",
+              "name": "liveCourseId",
+              "notNull": true,
+              "type": "int"
+            },
+            {
+              "desc": "科目",
+              "name": "subject",
+              "notNull": true,
+              "type": "string"
+            },
+            {
+              "desc": "是否神",
+              "name": "isGod",
+              "notNull": true,
+              "type": "boolean"
+            }
+          ],
+          "recommend": [
+            {
+              "desc": "开课时间",
+              "name": "openTime",
+              "notNull": true,
+              "type": "string"
+            },
+            {
+              "desc": "课程名称",
+              "name": "title",
+              "notNull": true,
+              "type": "string"
+            },
+            {
+              "desc": "是否启用优惠价 [true - 用, false - 不用",
+              "name": "isDiscount",
+              "notNull": true,
+              "type": "enum-string"
+            },
+            {
+              "desc": "教师列表",
+              "name": "teacherList",
+              "notNull": true,
+              "target": "teacher",
+              "type": "array-object"
+            },
+            {
+              "desc": "教授 --- 测试重用对象",
+              "name": "proList",
+              "notNull": true,
+              "target": "teacher",
+              "type": "object"
+            }
+          ],
+          "response": {
+            "obj": [
+              {
+                "desc": "购买列表",
+                "name": "purchasedList",
+                "notNull": true,
+                "target": "purchased",
+                "type": "array-object"
+              },
+              {
+                "desc": "推荐列表",
+                "name": "recommendList",
+                "notNull": true,
+                "target": "recommend",
+                "type": "array-object"
+              }
+            ]
+          },
+          "teacher": [
+            {
+              "desc": "1主讲老师  2辅导老师",
+              "name": "type",
+              "notNull": true,
+              "type": "int"
+            },
+            {
+              "desc": "老师名字",
+              "name": "name",
+              "notNull": true,
+              "type": "string"
+            }
+          ],
+          "version": 123
+        }
+      ],
+      "desc": "Tv端直播"
+    },
+    {
+      "apiDetailList": [
+        {
+          "desc": "获取可能出现类型的接口",
+          "domain": "mobile.owl.duoduokankan.com",
+          "httpType": "GET",
+          "httpUrl": "/v3/owlm/live_maybe_list",
+          "params": {
+            "obj": []
+          },
+          "purchased": [
+            {
+              "desc": "课程id",
+              "name": "liveCourseId",
+              "notNull": true,
+              "type": "int"
+            },
+            {
+              "desc": "科目",
+              "name": "subject",
+              "notNull": true,
+              "type": "string"
+            },
+            {
+              "desc": "是否神",
+              "name": "isGod",
+              "notNull": true,
+              "type": "boolean"
+            }
+          ],
+          "recommend": [
+            {
+              "desc": "开课时间",
+              "name": "openTime",
+              "notNull": true,
+              "type": "string"
+            },
+            {
+              "desc": "课程名称",
+              "name": "title",
+              "notNull": true,
+              "type": "string"
+            },
+            {
+              "desc": "是否启用优惠价 [true - 用, false - 不用",
+              "name": "isDiscount",
+              "notNull": true,
+              "type": "enum-string"
+            },
+            {
+              "desc": "教师列表",
+              "name": "teacherList",
+              "notNull": true,
+              "target": "teacher",
+              "type": "array-object"
+            }
+          ],
+          "response": {
+            "obj": [
+              {
+                "desc": "购买列表",
+                "name": "purchasedList",
+                "notNull": true,
+                "target": "purchased",
+                "type": "array-object"
+              },
+              {
+                "desc": "推荐列表",
+                "name": "recommendList",
+                "notNull": true,
+                "target": "recommend",
+                "type": "array-object"
+              }
+            ]
+          },
+          "teacher": [
+            {
+              "desc": "1主讲老师  2辅导老师",
+              "name": "type",
+              "notNull": true,
+              "type": "int"
+            },
+            {
+              "desc": "老师名字",
+              "name": "name",
+              "notNull": true,
+              "type": "string"
+            }
+          ],
+          "version": 123
+        }
+      ],
+      "desc": "Tv端支付和订单"
+    },
+    {
+      "apiDetailList": [
+        {
+          "desc": "获取可能出现类型的接口1",
+          "domain": "mobile.owl.duoduokankan.com",
+          "httpType": "GET",
+          "httpUrl": "/v3/owlm/live_maybe_list1",
+          "params": {
+            "obj": []
+          },
+          "purchased": [
+            {
+              "desc": "课程id",
+              "name": "liveCourseId",
+              "notNull": true,
+              "type": "int"
+            },
+            {
+              "desc": "科目",
+              "name": "subject",
+              "notNull": true,
+              "type": "string"
+            },
+            {
+              "desc": "是否神",
+              "name": "isGod",
+              "notNull": true,
+              "type": "boolean"
+            }
+          ],
+          "recommend": [
+            {
+              "desc": "开课时间",
+              "name": "openTime",
+              "notNull": true,
+              "type": "string"
+            },
+            {
+              "desc": "课程名称",
+              "name": "title",
+              "notNull": true,
+              "type": "string"
+            },
+            {
+              "desc": "是否启用优惠价 [true - 用, false - 不用",
+              "name": "isDiscount",
+              "notNull": true,
+              "type": "enum-string"
+            },
+            {
+              "desc": "教师列表",
+              "name": "teacherList",
+              "notNull": true,
+              "target": "teacher",
+              "type": "array-object"
+            }
+          ],
+          "response": {
+            "obj": [
+              {
+                "desc": "购买列表",
+                "name": "purchasedList",
+                "notNull": true,
+                "target": "purchased",
+                "type": "array-object"
+              },
+              {
+                "desc": "推荐列表",
+                "name": "recommendList",
+                "notNull": true,
+                "target": "recommend",
+                "type": "array-object"
+              }
+            ]
+          },
+          "teacher": [
+            {
+              "desc": "1主讲老师  2辅导老师",
+              "name": "type",
+              "notNull": true,
+              "type": "int"
+            },
+            {
+              "desc": "老师名字",
+              "name": "name",
+              "notNull": true,
+              "type": "string"
+            }
+          ],
+          "version": 123
+        }
+      ],
+      "desc": "Tv端支付和订单1"
+    }
+  ],
+  "desc": "猫头鹰项目接口",
+  "version": 123
+}

@@ -1,0 +1,2 @@
+include ':app', ':apigenerate'//, ':annotation'
+rootProject.name='ApiGeneratedPlugin'

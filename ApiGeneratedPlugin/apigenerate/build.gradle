@@ -1,0 +1,78 @@
+plugins {
+    id 'java'
+}
+
+apply plugin: 'maven'
+
+repositories {
+    google()
+    jcenter()
+    mavenCentral()
+}
+dependencies {
+    implementation gradleApi()
+    implementation 'com.android.tools.build:gradle:3.5.0'
+    implementation 'com.google.googlejavaformat:google-java-format:1.7'
+}
+
+// 插件打包上传共享
+group = 'com.vsoontech'
+version = '1.0.3'
+
+// 指定本地上传的路径
+def localPluginRepo = './plugin/repos' //add
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri(localPluginRepo)) //add
+            snapshotRepository(url: uri(localPluginRepo)) //add
+            pom.artifactId = 'apigenerate-gradle-plugin'
+//            pom.groupId = 'com.vsoontech'
+//            pom.version = version
+        }
+    }
+}
+
+//tasks.getByName('clean').doLast(new Action<Task>() {
+//    @Override
+//    void execute(Task task) {
+//        // 是否需要删除插件文件
+//        delete localPluginRepo
+//    }
+//})
+
+import java.text.SimpleDateFormat
+
+tasks.getByName('uploadArchives').doFirst(new Action<Task>() {
+    @Override
+    void execute(Task task) {
+        // 创建Config文件, 把版本号写进该文件
+        def proguardPath = "${project.projectDir.absolutePath}/src/main/java/com/vsoontech/plugin/apigenerate"
+        File dir = new File(proguardPath)
+        File mark = new File(dir, 'Config.java')
+        if (!dir.exists()) {
+            dir.mkdirs()
+        }
+        if (!mark.exists()) {
+            mark.createNewFile()
+        }
+        def dateFormat = new SimpleDateFormat("yyyy-MM-dd")
+        def now = dateFormat.format(new Date())
+        def source = "package com.vsoontech.plugin.apigenerate;\n" +
+                "\n" +
+                "/**\n" +
+                " * Auto Created File ${now}\n" +
+                " */\n" +
+                "public class Config {\n" +
+                "  public final static String PLUGIN_VERSION = \"${version}\";\n" +
+                "  public static String apiProject = \"${version}\";\n" +
+                "  public static String apiVersion = \"${version}\";\n" +
+                "  public static String genOutSrc = \"${version}\";\n" +
+                "  public static String genOutSrcPath = \"${version}\";\n" +
+                "}"
+        mark.write(source, 'UTF-8')
+    }
+})

@@ -1,0 +1,90 @@
+{
+  "purchasedList": [
+    {
+      "liveCourseId": 16,
+      "subject": "科目-16",
+      "isGod": false
+    },
+    {
+      "liveCourseId": 16,
+      "subject": "科目-16",
+      "isGod": false
+    },
+    {
+      "liveCourseId": 16,
+      "subject": "科目-16",
+      "isGod": false
+    }
+  ],
+  "recommendList": [
+    {
+      "openTime": "开课时间-16",
+      "title": "课程名称-16",
+      "isDiscount": "是否启用优惠价 [true - 用, false - 不用-16",
+      "teacherList": [
+        {
+          "type": 17,
+          "name": "老师名字-17"
+        },
+        {
+          "type": 17,
+          "name": "老师名字-17"
+        },
+        {
+          "type": 17,
+          "name": "老师名字-17"
+        }
+      ],
+      "proList": {
+        "type": 18,
+        "name": "老师名字-18"
+      }
+    },
+    {
+      "openTime": "开课时间-16",
+      "title": "课程名称-16",
+      "isDiscount": "是否启用优惠价 [true - 用, false - 不用-16",
+      "teacherList": [
+        {
+          "type": 17,
+          "name": "老师名字-17"
+        },
+        {
+          "type": 17,
+          "name": "老师名字-17"
+        },
+        {
+          "type": 17,
+          "name": "老师名字-17"
+        }
+      ],
+      "proList": {
+        "type": 18,
+        "name": "老师名字-18"
+      }
+    },
+    {
+      "openTime": "开课时间-16",
+      "title": "课程名称-16",
+      "isDiscount": "是否启用优惠价 [true - 用, false - 不用-16",
+      "teacherList": [
+        {
+          "type": 17,
+          "name": "老师名字-17"
+        },
+        {
+          "type": 17,
+          "name": "老师名字-17"
+        },
+        {
+          "type": 17,
+          "name": "老师名字-17"
+        }
+      ],
+      "proList": {
+        "type": 18,
+        "name": "老师名字-18"
+      }
+    }
+  ]
+}

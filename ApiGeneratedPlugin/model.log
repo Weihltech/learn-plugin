@@ -1,0 +1,1653 @@
+-------ApiModelAction--------
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+--- projectName = ApiGeneratedPlugin ; psiFile = PsiJavaFile:CoreseModel.java ; pkg = com.vsoontech.plugin.api
+--- projectName = ApiGeneratedPlugin
+--- Project : ApiGeneratedPlugin
+--- genOutSrcPath : app.build.generated.source.buildConfig.debug.com.vsoontech.plugin.api
+--- srcArgs : [app, build, generated, source, buildConfig, debug, com, vsoontech, plugin, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> debug
+---> com
+---> vsoontech
+---> plugin
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+--- projectName = ApiGeneratedPlugin ; psiFile = PsiJavaFile:CoreseModel.java ; pkg = com.vsoontech.plugin.api
+--- projectName = ApiGeneratedPlugin
+--- Project : ApiGeneratedPlugin
+--- genOutSrcPath : app.build.generated.source.buildConfig.debug.com.vsoontech.plugin.api
+--- srcArgs : [app, build, generated, source, buildConfig, debug, com, vsoontech, plugin, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> debug
+---> com
+---> vsoontech
+---> plugin
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+--- projectName = ApiGeneratedPlugin ; psiFile = PsiJavaFile:CoreseModel.java ; pkg = com.vsoontech.plugin.api
+--- projectName = ApiGeneratedPlugin
+--- Project : ApiGeneratedPlugin
+--- genOutSrcPath : app.build.generated.source.buildConfig.debug.com.vsoontech.plugin.api
+--- srcArgs : [app, build, generated, source, buildConfig, debug, com, vsoontech, plugin, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> debug
+---> com
+---> vsoontech
+---> plugin
+---> api
+api
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveMaybeListResp', isSel=false}
+ItemModel{name='LiveMaybeList1Resp', isSel=false}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveMaybeListResp', isSel=true}
+ItemModel{name='LiveMaybeList1Resp', isSel=false}
+ItemModel{name='LiveCourseList2Resp', isSel=false}
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+okAction !
+---->>> java.util.ArrayList<Purchased>
+---->>> java.util.ArrayList<Recommend>
+---->>> java.util.ArrayList<Purchased>
+---->>> java.util.ArrayList<Recommend>
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=false}
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=false}
+-------ApiModelAction--------
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+--- projectName = ApiGeneratedPlugin ; psiFile = PsiJavaFile:CoreseModel.java ; pkg = com.vsoontech.plugin.api
+--- projectName = ApiGeneratedPlugin
+--- Project : ApiGeneratedPlugin
+--- genOutSrcPath : app.build.generated.source.buildConfig.debug.com.vsoontech.plugin.api
+--- srcArgs : [app, build, generated, source, buildConfig, debug, com, vsoontech, plugin, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> debug
+---> com
+---> vsoontech
+---> plugin
+---> api
+api
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=false}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+ItemModel{name='LiveMaybeList1Resp', isSel=false}
+ItemModel{name='LiveMaybeListResp', isSel=false}
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveMaybeListResp', isSel=true}
+ItemModel{name='LiveMaybeList1Resp', isSel=false}
+ItemModel{name='LiveCourseList2Resp', isSel=false}
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveMaybeListResp', isSel=false}
+ItemModel{name='LiveMaybeList1Resp', isSel=false}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveMaybeListResp', isSel=true}
+ItemModel{name='LiveMaybeList1Resp', isSel=false}
+ItemModel{name='LiveCourseList2Resp', isSel=false}
+ItemModel{name='LiveMaybeListResp', isSel=false}
+ItemModel{name='LiveMaybeListResp', isSel=true}
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+ItemModel{name='LiveMaybeList1Resp', isSel=false}
+ItemModel{name='LiveMaybeListResp', isSel=false}
+ItemModel{name='LiveMaybeListResp', isSel=true}
+-------ApiModelAction--------
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+--- projectName = ApiGeneratedPlugin ; psiFile = PsiJavaFile:CoreseModel.java ; pkg = com.vsoontech.plugin.api
+--- projectName = ApiGeneratedPlugin
+--- Project : ApiGeneratedPlugin
+--- genOutSrcPath : app.build.generated.source.buildConfig.debug.com.vsoontech.plugin.api
+--- srcArgs : [app, build, generated, source, buildConfig, debug, com, vsoontech, plugin, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> debug
+---> com
+---> vsoontech
+---> plugin
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+--- projectName = ApiGeneratedPlugin ; psiFile = PsiJavaFile:CoreseModel.java ; pkg = com.vsoontech.plugin.api
+--- projectName = ApiGeneratedPlugin
+--- Project : ApiGeneratedPlugin
+--- genOutSrcPath : app.build.generated.source.buildConfig.debug.com.vsoontech.plugin.api
+--- srcArgs : [app, build, generated, source, buildConfig, debug, com, vsoontech, plugin, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> debug
+---> com
+---> vsoontech
+---> plugin
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+--- projectName = ApiGeneratedPlugin ; psiFile = PsiJavaFile:CoreseModel.java ; pkg = com.vsoontech.plugin.api
+--- projectName = ApiGeneratedPlugin
+--- Project : ApiGeneratedPlugin
+--- genOutSrcPath : app.build.generated.source.buildConfig.debug.com.vsoontech.plugin.api
+--- srcArgs : [app, build, generated, source, buildConfig, debug, com, vsoontech, plugin, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> debug
+---> com
+---> vsoontech
+---> plugin
+---> api
+api
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=false}
+ItemModel{name='LiveMaybeList1Resp', isSel=false}
+ItemModel{name='LiveMaybeListResp', isSel=false}
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+--- projectName = ApiModelTest ; psiFile = PsiJavaFile:CourseModel.java ; pkg = vsoontech.api
+--- projectName = ApiModelTest
+--- Project : ApiModelTest
+--- genOutSrcPath : app.build.generated.source.buildConfig.release.vsoontech.api
+--- srcArgs : [app, build, generated, source, buildConfig, release, vsoontech, api]
+---> app
+---> build
+---> generated
+---> source
+---> buildConfig
+---> release
+---> vsoontech
+---> api
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+-------ApiModelAction--------
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+api
+-------ApiModelAction--------
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : Recommend
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : Recommend
+api
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=false}
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : Recommend
+api
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=false}
+okAction !
+okAction !
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+okAction !
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=true}
+okAction !
+okAction !
+okAction !
+okAction !
+okAction !
+okAction !
+okAction !
+okAction !
+okAction !
+okAction !
+okAction !
+okAction !
+okAction !
+okAction !
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+okAction !
+---->>> ArrayList<Chapter>
+---->>> ArrayList<String>
+---->>> ArrayList<Integer>
+---->>> ArrayList<Boolean>
+okAction !
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=false}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+okAction !
+okAction !
+okAction !
+ItemModel{name='SampleListSameResp', isSel=true}
+okAction !
+okAction !
+okAction !
+ItemModel{name='SampleListSameResp', isSel=false}
+okAction !
+okAction !
+ItemModel{name='SampleListSameResp', isSel=true}
+okAction !
+okAction !
+okAction !
+okAction !
+okAction !
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleResp', isSel=true}
+okAction !
+okAction !
+okAction !
+okAction !
+okAction !
+okAction !
+-------ApiModelAction--------
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=false}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+okAction !
+okAction !
+okAction !
+ItemModel{name='SampleListSameResp', isSel=true}
+okAction !
+---->>> java.util.ArrayList<Purchased>
+---->>> java.util.ArrayList<Recommend>
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+okAction !
+---->>> ArrayList<Chapter>
+---->>> ArrayList<String>
+---->>> ArrayList<Integer>
+---->>> ArrayList<Boolean>
+---->>> java.util.ArrayList<Purchased>
+---->>> java.util.ArrayList<Recommend>
+---->>> java.util.ArrayList<Purchased>
+---->>> java.util.ArrayList<Recommend>
+---->>> java.util.ArrayList<Purchased>
+---->>> java.util.ArrayList<Recommend>
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString ! L
+fireRemoveUpdate ! 
+insertString ! i
+insertString ! v
+insertString ! e
+insertString ! M
+insertString ! o
+insertString ! d
+insertString ! e
+insertString ! l
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=true}
+okAction !
+okAction !
+okAction !
+okAction !
+okAction !
+okAction !
+okAction !
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString ! L
+fireRemoveUpdate ! 
+insertString ! i
+insertString ! v
+insertString ! e
+insertString ! M
+insertString ! o
+insertString ! d
+insertString ! e
+insertString ! l
+okAction !
+okAction !
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ItemModel{name='SampleListResp', isSel=true}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=false}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='SampleResp', isSel=true}
+mousePressed !MOUSE_PRESSED,(350,16),absolute(994,350),button=1,modifiers=Button1,extModifiers=Button1,clickCount=1
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='SampleResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=false}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ItemModel{name='SampleListResp', isSel=true}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+okAction !
+---->>> ArrayList<Chapter>
+---->>> ArrayList<String>
+---->>> ArrayList<Integer>
+---->>> ArrayList<Boolean>
+---->>> java.util.ArrayList<Purchased>
+---->>> java.util.ArrayList<Recommend>
+---->>> java.util.ArrayList<Purchased>
+---->>> java.util.ArrayList<Recommend>
+---->>> java.util.ArrayList<Purchased>
+---->>> java.util.ArrayList<Recommend>
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='MutilInnerListResp', isSel=true}
+okAction !
+---->>> ArrayList<Chapter>
+---->>> ArrayList<String>
+---->>> ArrayList<Integer>
+---->>> ArrayList<Boolean>
+---->>> java.util.ArrayList<Purchased>
+---->>> java.util.ArrayList<Recommend>
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString ! L
+fireRemoveUpdate ! 
+insertString ! i
+insertString ! v
+insertString ! e
+insertString ! M
+insertString ! o
+insertString ! d
+insertString ! e
+insertString ! l
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=true}
+okAction !
+okAction !
+okAction !
+okAction !
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=false}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ItemModel{name='MutilInnerListResp', isSel=true}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=false}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=false}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=true}
+okAction !
+---->>> ArrayList<Chapter>
+---->>> ArrayList<String>
+---->>> ArrayList<Integer>
+---->>> ArrayList<Boolean>
+---->>> java.util.ArrayList<Purchased>
+---->>> java.util.ArrayList<Recommend>
+---->>> java.util.ArrayList<Purchased>
+---->>> java.util.ArrayList<Recommend>
+---->>> java.util.ArrayList<Purchased>
+---->>> java.util.ArrayList<Recommend>
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='SampleResp', isSel=true}
+ItemModel{name='SampleResp', isSel=false}
+ItemModel{name='MutilInnerListResp', isSel=false}
+ItemModel{name='SampleListSameResp', isSel=false}
+mousePressed !MOUSE_PRESSED,(158,7),absolute(794,363),button=1,modifiers=Button1,extModifiers=Button1,clickCount=1
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString ! C
+fireRemoveUpdate ! 
+insertString ! o
+insertString ! u
+insertString ! r
+insertString ! s
+insertString ! e
+insertString ! M
+insertString ! o
+insertString ! d
+insertString ! e
+insertString ! l
+okAction ! CourseModel
+mousePressed !MOUSE_PRESSED,(69,29),absolute(705,385),button=1,modifiers=Button1,extModifiers=Button1,clickCount=1
+insertString ! s
+okAction ! CoursesModel
+okAction ! CoursesModel
+okAction ! CoursesModel
+okAction ! CoursesModel
+okAction ! CoursesModel
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=true}
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+ItemModel{name='SampleListResp', isSel=true}
+mousePressed !MOUSE_PRESSED,(180,38),absolute(816,394),button=1,modifiers=Button1,extModifiers=Button1,clickCount=1
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString ! L
+fireRemoveUpdate ! 
+insertString ! L
+insertString ! M
+insertString ! o
+insertString ! d
+insertString ! e
+insertString ! l
+okAction ! LLModel
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString ! A
+fireRemoveUpdate ! 
+insertString ! M
+insertString ! o
+insertString ! d
+insertString ! e
+insertString ! l
+okAction ! 
+AModel
+---->>> ArrayList<Chapter>
+---->>> ArrayList<String>
+---->>> ArrayList<Integer>
+---->>> ArrayList<Boolean>
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+api
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString ! A
+fireRemoveUpdate ! 
+insertString ! M
+insertString ! o
+insertString ! d
+insertString ! e
+insertString ! l
+okAction ! 
+AModel
+---->>> ArrayList<Chapter>
+---->>> ArrayList<String>
+---->>> ArrayList<Integer>
+---->>> ArrayList<Boolean>
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleResp', isSel=false}
+okAction !
+---->>> java.util.ArrayList<Purchased>
+---->>> java.util.ArrayList<Recommend>
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleResp', isSel=false}
+okAction !
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleResp', isSel=false}
+okAction !
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleResp', isSel=false}
+okAction !
+---vsoontech.api.MutilInnerListResp.Teache
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=false}
+ItemModel{name='SampleResp', isSel=false}
+okAction !
+createAssignObjListFieldContent ---vsoontech.api.MutilInnerListResp.Purchased
+createAssignObjListFieldContent ---vsoontech.api.MutilInnerListResp.Recommend
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleResp', isSel=false}
+okAction !
+createAssignObjListFieldContent ---.Purchased
+createAssignObjListFieldContent ---.Recommend
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleResp', isSel=false}
+okAction !
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+okAction !
+createAssignObjListFieldContent ---Chapter
+createAssignObjFieldContent ---Autor
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+api
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+ItemModel{name='LiveMaybeList1Resp', isSel=false}
+ItemModel{name='LiveMaybeListResp', isSel=false}
+ItemModel{name='LiveCourseList2Resp', isSel=false}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+okAction !
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+api
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+okAction !
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+api
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString !  
+fireRemoveUpdate ! 
+fireRemoveUpdate ! 
+insertString ! Model Class Name
+insertString ! C
+fireRemoveUpdate ! 
+insertString ! o
+insertString ! u
+fireRemoveUpdate ! Co
+insertString ! r
+insertString ! e
+insertString ! s
+insertString ! e
+insertString ! M
+insertString ! o
+insertString ! d
+insertString ! e
+insertString ! l
+okAction ! 
+CoreseModel
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+okAction ! 
+CoreseModel
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+okAction ! 
+CoreseModel
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+okAction ! 
+CoreseModel
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+okAction ! 
+CoreseModel
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+mousePressed !MOUSE_PRESSED,(128,29),absolute(764,385),button=1,modifiers=Button1,extModifiers=Button1,clickCount=1
+insertString ! s
+okAction ! 
+CoreseModels
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+api
+insertString ! Model Class Name
+insertString ! A
+fireRemoveUpdate ! 
+insertString ! M
+insertString ! o
+insertString ! d
+insertString ! e
+insertString ! l
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+okAction ! 
+AModel
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+okAction !
+createAssignObjListFieldContent ---Chapter
+createAssignObjFieldContent ---Autor
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+okAction !
+createAssignObjListFieldContent ---Chapter
+createAssignObjFieldContent ---Autor
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+api
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+okAction !
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+api
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+okAction !
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='SampleListResp', isSel=true}
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+okAction !
+createAssignObjListFieldContent ---Chapter
+createAssignObjFieldContent ---Autor
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+ApiProperties : D:\Weihl\samples\ApiModelTest\app\api.properties
+ApiProperties{genOutSrc='vsoontech.api', apiVersion='20191016', apiId='null', outSrcPath='app\build\generated\source\buildConfig\release'}
+target model : CourseModel
+api
+ItemModel{name='SampleListSameResp', isSel=true}
+ItemModel{name='MutilInnerListResp', isSel=true}
+ItemModel{name='SampleListResp', isSel=true}
+okAction !
+createAssignObjListFieldContent ---Chapter
+createAssignObjFieldContent ---Autor
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+api
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+okAction !
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+api
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+api
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+api
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+api
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : CoreseModel
+api
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+okAction !
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : AModel
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+api
+insertString ! Model Class Name
+insertString ! A
+fireRemoveUpdate ! 
+insertString !  
+fireRemoveUpdate ! A
+insertString !  
+fireRemoveUpdate ! A
+insertString !  
+fireRemoveUpdate ! A
+insertString !  
+fireRemoveUpdate ! A
+insertString !  
+fireRemoveUpdate ! A
+insertString !  
+fireRemoveUpdate ! A
+insertString ! M
+insertString ! o
+insertString ! d
+insertString ! e
+insertString ! l
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveMaybeList1Resp', isSel=false}
+ItemModel{name='LiveMaybeListResp', isSel=false}
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveMaybeList1Resp', isSel=false}
+ItemModel{name='LiveMaybeListResp', isSel=true}
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+okAction ! 
+AModel
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : BModel
+api
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+okAction !
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : BModel
+api
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : Recommend
+api
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+api
+insertString ! Model Class Name
+insertString ! A
+fireRemoveUpdate ! 
+insertString ! M
+insertString ! o
+insertString ! d
+insertString ! e
+insertString ! l
+ItemModel{name='LiveMaybeListResp', isSel=false}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=false}
+ItemModel{name='LiveMaybeList1Resp', isSel=false}
+ItemModel{name='LiveMaybeListResp', isSel=true}
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+okAction ! 
+AModel
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : BModel
+api
+ItemModel{name='LiveMaybeList1Resp', isSel=true}
+ItemModel{name='LiveCourseList2Resp', isSel=true}
+okAction !
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher
+createAssignObjFieldContent ---Teacher
+ApiProperties : D:\Android\workspace\ApiGeneratedPlugin\app\api.properties
+ApiProperties{genOutSrc='com.vsoontech.plugin.api', apiVersion='20191016', apiId='com.edu.owl', outSrcPath='app\build\generated\source\buildConfig\debug'}
+target model : Recommend
+api
+okAction !
+createAssignObjListFieldContent ---Purchased
+createAssignObjListFieldContent ---Recommend
+createAssignObjListFieldContent ---Teacher

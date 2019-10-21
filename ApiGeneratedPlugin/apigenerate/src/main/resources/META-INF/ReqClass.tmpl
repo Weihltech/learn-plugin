@@ -1,0 +1,31 @@
+package %package%;
+
+%logger%
+import com.vsoontech.base.http.request.GetRequest;
+
+/**
+ * Automatically generated file. DO NOT MODIFY !
+ * @desc %classDesc% !
+ * @author ApiGenerate
+ * @since %createData%
+ */
+ public class %className% extends GetRequest {
+
+  %fieldContent%
+
+  %construct%
+
+  @Override
+  public String getApi() { return "%httpUrl%";}
+
+  @Override
+  protected String getSecondDomainName() { return "%secondDomain%"; }
+
+  %innerClass%
+
+  @Override
+  public String toString() {
+    return "%toString%";
+  }
+
+}
