@@ -1,12 +1,15 @@
 package com.vsoontech.plugin.apigenerate.manager;
 
 
+import static com.vsoontech.plugin.apigenerate.ApiConfig.isEmpty;
+
 import com.google.googlejavaformat.java.Formatter;
 import com.google.googlejavaformat.java.FormatterException;
-import com.vsoontech.plugin.apigenerate.Config;
+import com.vsoontech.plugin.apigenerate.ApiConfig;
 import com.vsoontech.plugin.apigenerate.entity.ApiDetail;
 import com.vsoontech.plugin.apigenerate.entity.EntityClass;
 import com.vsoontech.plugin.apigenerate.entity.EntityField;
+import com.vsoontech.plugin.apigenerate.entity.EntityField.FieldLink;
 import com.vsoontech.plugin.apigenerate.utils.Logc;
 import java.io.File;
 import java.io.IOException;
@@ -19,42 +22,35 @@ import java.util.Scanner;
 import org.apache.commons.io.Charsets;
 import org.apache.commons.io.FileUtils;
 
+// 根据基础信息，转义成 java 文件；即Resp、Req 实体类
 class ClassConvertManager {
 
-    private final String REQ_CLASS_PATH = "/META-INF/ReqClass.tmpl";
-    private final String RESP_CLASS_PATH = "/META-INF/RespClass.tmpl";
-    private final String INNER_CLASS_PATH = "/META-INF/InnerClass.tmpl";
-    private final String CONSTRUCT_METHOD_PATH = "/META-INF/ConstructMethod.tmpl";
     private String reqClassTemplate;
     private String respClassTemplate;
     private String innerClassTemplate;
     private String constructMethodTemplate;
-    private String targetPackageName;
+    private String constsClassTemplate;
     private File mApiJavaDir;
     private Formatter mFormatter;
+    private String targetPackageName;
+    private SimpleDateFormat dateFormat;
+    private String tConstsClassName;
 
-    public File[] getApiJavaFiles() {
-        return mApiJavaDir != null ? mApiJavaDir.listFiles() : null;
-    }
 
-
-    ClassConvertManager(String javaOutputDir, String appPackageName) {
+    ClassConvertManager() {
         mFormatter = new Formatter();
-        targetPackageName = Config.genOutSrc;
+        dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINESE);
+        reqClassTemplate = getResourceAsStream(ApiConfig.TMPL_REQ_CLASS_PATH);
+        respClassTemplate = getResourceAsStream(ApiConfig.TMPL_RESP_CLASS_PATH);
+        innerClassTemplate = getResourceAsStream(ApiConfig.TMPL_INNER_CLASS_PATH);
+        constructMethodTemplate = getResourceAsStream(ApiConfig.TMPL_CONSTRUCT_METHOD_PATH);
+        constsClassTemplate = getResourceAsStream(ApiConfig.TMPL_CONSTS_CLASS_PATH);
+        mApiJavaDir = new File(ApiConfig.getApiJavaOutputDir());
+        targetPackageName = ApiConfig.sProp.genOutSrc;
 
-        reqClassTemplate = getResourceAsStream(REQ_CLASS_PATH);
-        respClassTemplate = getResourceAsStream(RESP_CLASS_PATH);
-        innerClassTemplate = getResourceAsStream(INNER_CLASS_PATH);
-        constructMethodTemplate = getResourceAsStream(CONSTRUCT_METHOD_PATH);
-
-        // 检查 / 创建Java文件输出文件夹
-        String apiJavaOutputDir = (javaOutputDir + File.separator + targetPackageName)
-            .replace(".", File.separator) + File.separator;
-        mApiJavaDir = new File(apiJavaOutputDir);
         if (!mApiJavaDir.exists() && mApiJavaDir.mkdirs()) {
-            Logc.d(mApiJavaDir.toString());
+            Logc.d("Create Api Java-OutPuts-Dir Success !");
         }
-
     }
 
     private String getResourceAsStream(String filePath) {
@@ -63,79 +59,203 @@ class ClassConvertManager {
         return scanner.useDelimiter("\\A").next();
     }
 
+    void logStart() {
+        if (openLog()) {
+            Logc.d("");
+            Logc.d("@ ClassConvertManager <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-");
+        }
+    }
+
     void generate(ApiDetail apiDetail) throws IOException, FormatterException {
 
+        if (openLog()) {
+            Logc.d("Convert Target [" + apiDetail.toString() + "] ");
+        }
         if (apiDetail != null
             && mApiJavaDir != null
             && mApiJavaDir.exists()) {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINESE);
+            tConstsClassName = apiDetail.respEntityCls.className
+                .replace(ApiConfig.RESP, ApiConfig.CONSTS);
+
             // Req
-            if (apiDetail.reqEntityCls != null
-                && !isEmpty(apiDetail.reqEntityCls.className)) {
-                EntityClass tCls = apiDetail.reqEntityCls;
-                File reqJavaFile = new File(mApiJavaDir, tCls.className + ".java");
-                String reqJavaContent = reqClassTemplate
-                    .replaceAll("%package%", targetPackageName)
-                    .replaceAll("%logger%", checkLogger(tCls.getInnerClss()))
-                    .replaceAll("%innerClass%", createInnerClassContent(tCls.getInnerClss()))
-                    .replaceAll("%construct%", createConstructContent(tCls))
-                    .replaceAll("%httpUrl%", apiDetail.httpUrl)
-                    .replaceAll("%secondDomain%", apiDetail.getSecondDomain())
-                    .replaceAll("%createData%", dateFormat.format(new Date()))
-                    .replaceAll("%classDesc%", tCls.classDesc)
-                    .replaceAll("%className%", tCls.className)
-                    .replaceAll("%fieldContent%", createFieldContent(tCls.getFields()))
-                    .replaceAll("%toString%", createToStringContent(tCls.className, tCls.getFields()));
-
-                FileUtils.writeStringToFile(reqJavaFile,
-                    mFormatter.formatSource(reqJavaContent),
-                    Charsets.UTF_8, false);
-
-                Logc.d(apiDetail.reqEntityCls.className + " UP-TO-DATE");
-            }
+            createReq(apiDetail);
 
             // Resp
-            if (apiDetail.respEntityCls != null
-                && !isEmpty(apiDetail.respEntityCls.className)) {
-                EntityClass tCls = apiDetail.respEntityCls;
-                File respJavaFile = new File(mApiJavaDir, tCls.className + ".java");
-                String respJavaContent = respClassTemplate
-                    .replaceAll("%package%", targetPackageName)
-                    .replaceAll("%createData%", dateFormat.format(new Date()))
-                    .replaceAll("%classDesc%", tCls.classDesc)
-                    .replaceAll("%className%", tCls.className)
-                    .replaceAll("%fieldContent%", createFieldContent(tCls.getFields()))
-                    .replaceAll("%innerClass%", createInnerClassContent(tCls.getInnerClss()))
-                    .replaceAll("%toString%", createToStringContent(tCls.className, tCls.getFields()))
-                    .replaceAll("%generateModelDesc%", apiDetail.getSampleDesc());
+            createResp(apiDetail);
 
-                FileUtils.writeStringToFile(respJavaFile,
-                    mFormatter.formatSource(respJavaContent),
-                    Charsets.UTF_8, false);
-                Logc.d(apiDetail.respEntityCls.className + " UP-TO-DATE");
-            }
+            // constsJavaFile
+            createConsts(apiDetail);
         } else {
-            Logc.d("apiDetail or mApiJavaDir is null");
+            if (openLog()) {
+                Logc.d("ApiDetail Or Api-Java-OutPuts-Dir Is Null !");
+            }
         }
 
     }
 
-    private String createConstructContent(EntityClass cls) {
+    private void createConsts(ApiDetail apiDetail) throws IOException, FormatterException {
+        if (!isEmpty(tConstsClassName)
+            && tConstsClassName.endsWith(ApiConfig.CONSTS)) {
+            StringBuilder constsBuilder = new StringBuilder();
+            ArrayList<String> linkArr = new ArrayList<>();
+            collectEntityClassLinks(linkArr, constsBuilder, apiDetail.reqEntityCls);
+            collectEntityClassLinks(linkArr, constsBuilder, apiDetail.respEntityCls);
+            if (constsBuilder.length() > 0) {
+                File constsJavaFile = new File(mApiJavaDir, tConstsClassName + ApiConfig.JAVA_SUFFIX);
+                String constsContent = constsClassTemplate
+                    .replaceAll("%package%", targetPackageName)
+                    .replaceAll("%createData%", dateFormat.format(new Date()))
+                    .replaceAll("%classDesc%", apiDetail.desc + " --> 常量")
+                    .replaceAll("%className%", tConstsClassName)
+                    .replaceAll("%constsContent%", constsBuilder.toString())
+                    .replaceAll("%generateModelDesc%", apiDetail.getSampleDesc());
+                try {
+                    FileUtils.writeStringToFile(constsJavaFile,
+                        mFormatter.formatSource(constsContent),
+                        Charsets.UTF_8, false);
+                } catch (FormatterException e) {
+                    FileUtils.writeStringToFile(
+                        new File(constsJavaFile.getParent(), "Error" + constsJavaFile.getName()),
+                        constsContent,
+                        Charsets.UTF_8, false);
+                    throw new FormatterException("Illegal-Java-File ! 详细查看Java输出文件");
+                }
+                if (openLog()) {
+                    Logc.d(tConstsClassName + " UP-TO-DATE");
+                }
+            }
+        }
+    }
+
+    private void collectEntityClassLinks(ArrayList<String> linkArr, StringBuilder constsBuilder,
+        EntityClass entityCls) {
+        if (entityCls != null
+            && !entityCls.getFields().isEmpty()) {
+            for (EntityField entityField : entityCls.getFields()) {
+                if (entityField.type.isEnum()
+                    && entityField.links != null
+                    && !entityField.links.isEmpty()) {
+                    for (FieldLink link : entityField.links) {
+                        // 去重
+                        if (!linkArr.contains(link.name)) {
+                            // desc
+                            constsBuilder.append(" // ").append(link.desc).append("\n");
+                            // consts
+                            String type = link.type.toLowerCase();
+                            if ("int".equals(type)) {
+                                constsBuilder.append("public static final int ")
+                                    .append(link.name).append(" = ")
+                                    .append(link.value).append(";\n");
+                            } else if ("string".equals(type)) {
+                                constsBuilder.append("public static final String ")
+                                    .append(link.name).append(" = \"")
+                                    .append(link.value).append("\";\n\n");
+                            }
+                            linkArr.add(link.name);
+                        }
+                    }
+                }
+            }
+        }
+
+        // 递推收集内部类常量
+        ArrayList<EntityClass> innerClass = entityCls.getInnerClss();
+        if (!innerClass.isEmpty()) {
+            for (EntityClass innerCls : innerClass) {
+                collectEntityClassLinks(linkArr, constsBuilder, innerCls);
+            }
+        }
+    }
+
+    private void createResp(ApiDetail apiDetail) throws IOException, FormatterException {
+        if (apiDetail.respEntityCls != null
+            && !isEmpty(apiDetail.respEntityCls.className)) {
+            EntityClass tCls = apiDetail.respEntityCls;
+            File respJavaFile = new File(mApiJavaDir, tCls.className + ApiConfig.JAVA_SUFFIX);
+            String respJavaContent = respClassTemplate
+                .replaceAll("%package%", targetPackageName)
+                .replaceAll("%createData%", dateFormat.format(new Date()))
+                .replaceAll("%classDesc%", tCls.classDesc)
+                .replaceAll("%className%", tCls.className)
+                .replaceAll("%fieldContent%", createFieldContent(tCls.getFields()))
+                .replaceAll("%innerClass%", createInnerClassContent(tCls.getInnerClss()))
+                .replaceAll("%toString%", createToStringContent(tCls.className, tCls.getFields()))
+                .replaceAll("%generateModelDesc%", apiDetail.getSampleDesc());
+
+            try {
+                FileUtils.writeStringToFile(respJavaFile,
+                    mFormatter.formatSource(respJavaContent),
+                    Charsets.UTF_8, false);
+            } catch (FormatterException e) {
+                FileUtils.writeStringToFile(
+                    new File(respJavaFile.getParent(), "Error" + respJavaFile.getName()),
+                    respJavaContent,
+                    Charsets.UTF_8, false);
+                throw new FormatterException("Illegal-Java-File ! 详细查看Java输出文件");
+            }
+            if (openLog()) {
+                Logc.d(apiDetail.respEntityCls.className + " UP-TO-DATE");
+            }
+        }
+    }
+
+    private void createReq(ApiDetail apiDetail) throws IOException, FormatterException {
+        if (apiDetail.reqEntityCls != null
+            && !isEmpty(apiDetail.reqEntityCls.className)) {
+            EntityClass tCls = apiDetail.reqEntityCls;
+            File reqJavaFile = new File(mApiJavaDir, tCls.className + ApiConfig.JAVA_SUFFIX);
+            String reqJavaContent = reqClassTemplate
+                .replaceAll("%package%", targetPackageName)
+                .replaceAll("%loggerImport%", checkLogger(tCls.getInnerClss()))
+                .replaceAll("%innerClass%", createInnerClassContent(tCls.getInnerClss()))
+                .replaceAll("%construct%", createReqConstructContent(tCls))
+                .replaceAll("%httpUrl%", apiDetail.httpUrl)
+                .replaceAll("%secondDomain%", apiDetail.getSecondDomain())
+                .replaceAll("%createData%", dateFormat.format(new Date()))
+                .replaceAll("%classDesc%", tCls.classDesc)
+                .replaceAll("%className%", tCls.className)
+                .replaceAll("%type%", apiDetail.getHttpType())
+                .replaceAll("%httpTypeImport%", apiDetail.getHttpTypeImport())
+                .replaceAll("%fieldContent%", createFieldContent(tCls.getFields()))
+                .replaceAll("%toString%", createToStringContent(tCls.className, tCls.getFields()));
+
+            try {
+                FileUtils.writeStringToFile(reqJavaFile,
+                    mFormatter.formatSource(reqJavaContent),
+                    Charsets.UTF_8, false);
+            } catch (FormatterException e) {
+                FileUtils.writeStringToFile(
+                    new File(reqJavaFile.getParent(), "Error" + reqJavaFile.getName()),
+                    reqJavaContent,
+                    Charsets.UTF_8, false);
+                throw new FormatterException("Illegal-Java-File ! 详细查看Java输出文件");
+            }
+
+            if (openLog()) {
+                Logc.d(apiDetail.reqEntityCls.className + " UP-TO-DATE");
+            }
+        }
+    }
+
+    private String createReqConstructContent(EntityClass cls) {
         if (cls != null
             && cls.getInnerClss() != null
             && !cls.getInnerClss().isEmpty()) {
-            EntityClass innerClass = cls.getInnerClss().get(0);
-            String newCls = constructMethodTemplate
-                .replaceAll("%className%", cls.className)
-                .replaceAll("%innerClassName%", innerClass.className);
-            return newCls;
+            for (EntityClass innerClass : cls.getInnerClss()) {
+                if ("Params".toLowerCase().equals(innerClass.className.toLowerCase())) {
+                    return constructMethodTemplate
+                        .replaceAll("%className%", cls.className)
+                        .replaceAll("%innerClassName%", innerClass.className);
+                }
+            }
         }
 
         return "";
     }
 
     private String checkLogger(ArrayList<EntityClass> innerClss) {
-        return innerClss != null && !innerClss.isEmpty() ? "import com.linkin.base.debug.logger.L;" : "";
+//        return innerClss != null && !innerClss.isEmpty() ? ApiConfig.IMPORT_LOGGER : "";
+        return "";
     }
 
     private String createInnerClassContent(ArrayList<EntityClass> innerClss) {
@@ -153,11 +273,10 @@ class ClassConvertManager {
     private String newInnerClsContent(EntityClass cls) {
 
         if (cls != null && !cls.getFields().isEmpty()) {
-            String newCls = innerClassTemplate
+            return innerClassTemplate
                 .replaceAll("%className%", cls.className)
                 .replaceAll("%fieldContent%", createFieldContent(cls.getFields()))
                 .replaceAll("%toString%", createToStringContent(cls.className, cls.getFields()));
-            return newCls;
         }
 
         return "";
@@ -185,10 +304,22 @@ class ClassConvertManager {
             for (EntityField field : fields) {
                 if (field != null) {
                     // desc
-                    builder.append("// ")
-                        .append(field.desc)
-                        .append(" ; NotNull : ")
-                        .append(field.notNull).append("\n");
+                    String desc = field.desc.replaceAll("\\n", "\\n//");
+                    if (field.type.isEnum()) {
+                        /**
+                         * {@link AddressReq.Params}
+                         */
+                        builder.append("/** ").append(desc).append("<br/>");
+                        for (FieldLink link : field.links) {
+                            builder.append(link.desc).append(": {@link ").append(tConstsClassName).append("#")
+                                .append(link.name)
+                                .append("} ; <br/>");
+                        }
+                        builder.append("*/").append("\n");
+                    } else {
+                        builder.append("// ").append(desc).append("\n");
+                    }
+
                     // public int total;
                     builder.append("public").append(" ")
                         .append(field.type.value(field.target)).append(" ")
@@ -199,14 +330,18 @@ class ClassConvertManager {
         return builder.toString();
     }
 
-    private boolean isEmpty(CharSequence s) {
-        if (s == null) {
-            return true;
-        } else {
-            return s.length() == 0;
-        }
+    private boolean openLog() {
+        return ApiConfig.sProp == null || ApiConfig.sProp.openLog || ApiConfig.sProp.openConvertLog;
     }
 
+    void cleanApiJavaDir() {
+        try {
+            Logc.d("[Clean JavaFiles .]  " + mApiJavaDir.getAbsolutePath());
+            FileUtils.cleanDirectory(mApiJavaDir);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
 //    根据反射，对 cls 对象赋值

@@ -1,7 +1,8 @@
 package %package%;
 
-%logger%
-import com.vsoontech.base.http.request.GetRequest;
+%loggerImport%
+%httpTypeImport%
+import java.io.Serializable;
 
 /**
  * Automatically generated file. DO NOT MODIFY !
@@ -9,7 +10,7 @@ import com.vsoontech.base.http.request.GetRequest;
  * @author ApiGenerate
  * @since %createData%
  */
- public class %className% extends GetRequest {
+ public class %className% extends %type%Request implements Serializable {
 
   %fieldContent%
 

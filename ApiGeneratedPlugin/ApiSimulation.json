@@ -7,13 +7,27 @@
           "domain": "mobile.owl.duoduokankan.com",
           "httpType": "GET",
           "httpUrl": "/v3/owlm/live_course_list",
+          "enumGrade": [
+            {
+              "desc": "简单",
+              "name": "SAMPLE",
+              "value": 123,
+              "type": "int"
+            },
+            {
+              "desc": "复杂",
+              "name": "COMPLEX",
+              "value": 126,
+              "type": "int"
+            }
+          ],
           "params": {
             "obj": [
               {
                 "desc": "年级",
                 "name": "grade",
                 "notNull": true,
-                "type": "int"
+                "type": "enum-int"
               },
               {
                 "desc": "开课时间",
@@ -437,5 +451,5 @@
     }
   ],
   "desc": "猫头鹰项目接口",
-  "version": 123
+  "version": "1560852447"
 }

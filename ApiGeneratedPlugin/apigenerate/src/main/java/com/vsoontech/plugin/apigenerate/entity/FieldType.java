@@ -1,6 +1,8 @@
 package com.vsoontech.plugin.apigenerate.entity;
 
 
+import static com.vsoontech.plugin.apigenerate.ApiConfig.isEmpty;
+
 import com.vsoontech.plugin.apigenerate.utils.HumpHelper;
 
 public class FieldType {
@@ -12,19 +14,30 @@ public class FieldType {
     }
 
     public String value(String target) {
-        if ("object".equals(mValue)) {
-            return HumpHelper.lineToHump("_" + target);
-        } else if ("array-object".equals(mValue)) {
-            String targetC = HumpHelper.lineToHump("_" + target);
-            return " java.util.ArrayList<" + targetC + "> ";
-        } else if ("enum-string".equals(mValue) || "string".equals(mValue)) {
+        if (isObj()) {
+            return getTargetClassName(target);
+        } else if (isArrayObj()) {
+            return " java.util.ArrayList<" + getTargetClassName(target) + "> ";
+        } else if (isArrayString()) {
+            return " java.util.ArrayList<String> ";
+        } else if (isArrayInteger()) {
+            return " java.util.ArrayList<Integer> ";
+        } else if (isArrayFloat()) {
+            return " java.util.ArrayList<Float> ";
+        } else if (isString()) {
             return "String";
-        } else if ("int".equals(mValue)) {
+        } else if (isNumber()) {
             return mValue;
-        } else if ("boolean".equals(mValue)) {
+        } else if (isBoolean()) {
             return mValue;
+        } else if (isEnumInt()) {
+            return "int";
         }
         return "";
+    }
+
+    private String getTargetClassName(String target) {
+        return HumpHelper.convertTargetName(target);
     }
 
     @Override
@@ -35,15 +48,27 @@ public class FieldType {
     }
 
     public boolean isObj() {
-        return "array-object".equals(mValue) || "object".equals(mValue);
+        return "object".equals(mValue);
     }
 
     public boolean isNumber() {
-        return "int".equals(mValue) || "long".equals(mValue);
+        return "int".equals(mValue)
+            || "long".equals(mValue)
+            || "float".equals(mValue);
+    }
+
+    public boolean isDate() {
+        return "date".equals(mValue);
+    }
+
+    public boolean isEnumInt() {
+        return "enum-int".equals(mValue);
     }
 
     public boolean isString() {
-        return "string".equals(mValue) || "enum-string".equals(mValue);
+        return "string".equals(mValue)
+            || "date".equals(mValue) // 此类型实际返回格式化后的字段串
+            || "enum-string".equals(mValue);
     }
 
     public boolean isBoolean() {
@@ -52,5 +77,21 @@ public class FieldType {
 
     public boolean isArrayObj() {
         return "array-object".equals(mValue);
+    }
+
+    public boolean isArrayFloat() {
+        return "array-float".equals(mValue);
+    }
+
+    public boolean isArrayInteger() {
+        return "array-int".equals(mValue);
+    }
+
+    public boolean isArrayString() {
+        return "array-string".equals(mValue);
+    }
+
+    public boolean isEnum() {
+        return !isEmpty(mValue) && mValue.startsWith("enum");
     }
 }

@@ -4,45 +4,45 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.vsoontech.plugin.apigenerate.ApiConfig;
 import com.vsoontech.plugin.apigenerate.entity.ApiDetail;
 import com.vsoontech.plugin.apigenerate.entity.EntityClass;
 import com.vsoontech.plugin.apigenerate.entity.EntityField;
+import com.vsoontech.plugin.apigenerate.entity.EntityField.FieldLink;
 import com.vsoontech.plugin.apigenerate.entity.FieldType;
 import com.vsoontech.plugin.apigenerate.utils.HumpHelper;
+import com.vsoontech.plugin.apigenerate.utils.Logc;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.apache.commons.io.Charsets;
 import org.apache.commons.io.FileUtils;
 
+// 分析缓存Json文件，收集域名、字段、内部类等基础信息
 class ClassParseManager {
 
+
+    private ArrayList<ApiDetail> illegalApiDetail;
+
     public interface CallBack {
+
+        void illegalApi(ArrayList<ApiDetail> illegalApiDetails);
 
         void onResult(ArrayList<ApiDetail> apiDetails);
     }
 
-    public ClassParseManager() {
+    ClassParseManager() {
+        illegalApiDetail = new ArrayList<>();
     }
 
-    // 暂时没有做所有对比操作，只判断了数量、版本号
-    private boolean needCreateUpdate(ArrayList<File> apiDetailList) {
-//        File[] subFiles = mJavaFileOutputDir.listFiles();
-//        return !(subFiles != null && apiDetailList.size() == subFiles.length);
-        return true;
-    }
-
-    private String subEndString(String s, String content) {
-        return content.substring(content.lastIndexOf(s), content.length()).replace(s, "_");
-    }
-
-    public void run(ArrayList<File> apiDetailList, CallBack callBack) {
-        if (needCreateUpdate(apiDetailList) && apiDetailList != null && !apiDetailList.isEmpty()) {
+    void parse(ArrayList<File> apiDetailList, CallBack callBack) {
+        if (apiDetailList != null
+            && !apiDetailList.isEmpty()) {
             try {
                 ArrayList<ApiDetail> apiDetails = new ArrayList<>();
                 for (File file : apiDetailList) {
                     if (file != null && file.exists()) {
-                        ApiDetail apiDetail = analyJsonFile(file);
+                        ApiDetail apiDetail = parseJsonFile(file);
                         if (apiDetail != null) {
                             apiDetails.add(apiDetail);
                         }
@@ -50,6 +50,7 @@ class ClassParseManager {
                 }
 
                 if (callBack != null) {
+                    callBack.illegalApi(illegalApiDetail);
                     callBack.onResult(apiDetails);
                 }
             } catch (Exception e) {
@@ -58,63 +59,111 @@ class ClassParseManager {
         }
     }
 
-    private ApiDetail analyJsonFile(File file) throws IOException {
+    private ApiDetail parseJsonFile(File file) throws IOException {
         String jsonStr = FileUtils.readFileToString(file, Charsets.UTF_8);
         JsonObject apiDetailJsonObj = (JsonObject) new JsonParser().parse(jsonStr);
         if (apiDetailJsonObj != null
             && apiDetailJsonObj.get("desc") != null) {
             ApiDetail apiDetail = new ApiDetail();
-            collectApiDeatilInfo(apiDetail, apiDetailJsonObj);
-            String className = HumpHelper.lineToHump(subEndString("/", apiDetail.httpUrl));
+            apiDetail.group = file.getParentFile().getName();
+            collectApiDetailInfo(apiDetail, apiDetailJsonObj);
+            apiDetail.desc = file.getParentFile().getName() + " - " + apiDetail.desc;
 
-            JsonObject paramsObj = apiDetailJsonObj.getAsJsonObject("params");
-            if (paramsObj != null) {
-                apiDetail.reqEntityCls = new EntityClass(className + "Req");
+            if (apiDetail.isIllegal()) {
+                illegalApiDetail.add(apiDetail);
+                return null;
+            }
+
+            String className = convertClassName(apiDetail.httpUrl);
+            JsonObject paramsJsonObj = apiDetailJsonObj.getAsJsonObject("params");
+            if (paramsJsonObj != null) {
+                apiDetail.reqEntityCls = new EntityClass(className + ApiConfig.REQ);
                 apiDetail.reqEntityCls.classDesc = apiDetail.desc;
-                JsonArray fieldArr = paramsObj.getAsJsonArray("obj");
-                // Req 参数不会有嵌套 ？ ; 如果参数不为空，则创建内部类
-                if (fieldArr != null && fieldArr.size() > 0) {
-                    EntityClass reqInnerCls = new EntityClass("Params");
-                    for (JsonElement fieldJson : fieldArr) {
-                        EntityField reqInnerClsFields = collectFields(fieldJson);
-                        if (reqInnerClsFields != null) {
-                            reqInnerCls.getFields().add(reqInnerClsFields);
-                        }
+
+                JsonElement paramsJsonElement = paramsJsonObj.get("obj");
+                if (paramsJsonElement.isJsonArray()) {
+                    JsonArray fieldArr = paramsJsonElement.getAsJsonArray();
+                    // 先创建 参数 内部对象，再收集可用内部类
+                    if (fieldArr != null && fieldArr.size() > 0) {
+                        EntityClass reqInnerCls = new EntityClass("Params");
+                        collectFieldsAndInnerClass(apiDetail.reqEntityCls, reqInnerCls, apiDetailJsonObj,
+                            paramsJsonObj, "obj");
+                        apiDetail.reqEntityCls.getInnerClss().add(reqInnerCls);
                     }
-                    apiDetail.reqEntityCls.getInnerClss().add(reqInnerCls);
                 }
             }
 
-            JsonObject respTargetJsonObj = apiDetailJsonObj.getAsJsonObject("response");
-            if (respTargetJsonObj != null) {
-                apiDetail.respEntityCls = new EntityClass(className + "Resp");
+            JsonObject responseJsonObj = apiDetailJsonObj.getAsJsonObject("response");
+            if (responseJsonObj != null) {
+                apiDetail.respEntityCls = new EntityClass(className + ApiConfig.RESP);
                 apiDetail.respEntityCls.classDesc = apiDetail.desc;
-                // 这里做递归读取 target - obj;
                 collectFieldsAndInnerClass(apiDetail.respEntityCls, apiDetail.respEntityCls, apiDetailJsonObj,
-                    respTargetJsonObj, "obj");
+                    responseJsonObj, "obj");
             }
+
             return apiDetail;
         }
         return null;
     }
 
-    private void collectFieldsAndInnerClass(EntityClass sourceEntityClass, EntityClass newEnityClass,
+//    private void collectApiDetailConstsInfo(ApiDetail apiDetail, JsonObject apiDetailJsonObj) {
+//
+//        Iterator<String> keySet = apiDetailJsonObj.keySet().iterator();
+//        while (keySet.hasNext()) {
+//            String key = keySet.next();
+//            if (!isEmpty(key) && key.startsWith("enum")) {
+//                JsonElement constsJsonElement = apiDetailJsonObj.get(key);
+//                if (constsJsonElement.isJsonArray()) {
+//                    JsonArray fieldArr = constsJsonElement.getAsJsonArray();
+//                    if (fieldArr != null && fieldArr.size() > 0) {
+//                        apiDetail.constsFileds = new ArrayList<>();
+//                        for (JsonElement fieldJson : fieldArr) {
+//                            if (fieldJson.isJsonObject()) {
+//                                EntityConsts entityConsts = new EntityConsts();
+//                                JsonObject fieldJsonObj = fieldJson.getAsJsonObject();
+//                                entityConsts.desc = getString(fieldJsonObj, "desc");
+//                                entityConsts.name = getString(fieldJsonObj, "name");
+//                                entityConsts.type = getString(fieldJsonObj, "type");
+//                                entityConsts.value = getString(fieldJsonObj, "value");
+//                                apiDetail.constsFileds.add(entityConsts);
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//
+//    }
+
+    private String convertClassName(String httpUrl) {
+        httpUrl = httpUrl.substring(
+            httpUrl.lastIndexOf("/"))
+            .replace("/", "_");
+        return HumpHelper.lineToHump(httpUrl);
+    }
+
+    private void collectFieldsAndInnerClass(EntityClass sourceEntityClass, EntityClass newEntityClass,
         JsonObject sourceJsonObj, JsonObject targetJsonObj,
         String target) {
-        JsonArray fieldArr = targetJsonObj.getAsJsonArray(target);
-        if (fieldArr != null && fieldArr.size() > 0) {
-            for (JsonElement fieldJson : fieldArr) {
-                EntityField reqInnerClsField = collectFields(fieldJson);
-                if (reqInnerClsField != null) {
-                    newEnityClass.getFields().add(reqInnerClsField);
-                    // 收集 内部类 的 target 类
-                    if (reqInnerClsField.type.isObj()
-                        && !isEmpty(reqInnerClsField.target)
-                        && !hasTargetEntityClass(sourceEntityClass.getInnerClss(), reqInnerClsField.target)) {
-                        EntityClass entityClass = new EntityClass(HumpHelper.lineToHump("_" + reqInnerClsField.target));
-                        collectFieldsAndInnerClass(sourceEntityClass, entityClass, sourceJsonObj, sourceJsonObj,
-                            reqInnerClsField.target);
-                        sourceEntityClass.getInnerClss().add(entityClass);
+        JsonElement targetJsonElement = targetJsonObj.get(target);
+        if (targetJsonElement.isJsonArray()) {
+            JsonArray fieldArr = targetJsonElement.getAsJsonArray();
+            if (fieldArr != null && fieldArr.size() > 0) {
+                for (JsonElement fieldJson : fieldArr) {
+                    EntityField reqInnerClsField = collectFields(sourceJsonObj, fieldJson);
+                    if (reqInnerClsField != null) {
+                        newEntityClass.getFields().add(reqInnerClsField);
+                        // 收集 内部类 的 target 类
+                        if ((reqInnerClsField.type.isObj() || reqInnerClsField.type.isArrayObj())
+                            && !isEmpty(reqInnerClsField.target)) {
+                            String targetName = HumpHelper.convertTargetName(reqInnerClsField.target);
+                            if (!hasTargetEntityClass(sourceEntityClass.getInnerClss(), targetName)) {
+                                EntityClass entityClass = new EntityClass(targetName);
+                                collectFieldsAndInnerClass(sourceEntityClass, entityClass, sourceJsonObj, sourceJsonObj,
+                                    reqInnerClsField.target);
+                                sourceEntityClass.getInnerClss().add(entityClass);
+                            }
+                        }
                     }
                 }
             }
@@ -130,7 +179,7 @@ class ClassParseManager {
         return false;
     }
 
-    private EntityField collectFields(JsonElement fieldJson) {
+    private EntityField collectFields(JsonObject sourceJsonObj, JsonElement fieldJson) {
         JsonObject jsonObject = fieldJson.getAsJsonObject();
         if (jsonObject != null) {
             EntityField entityField = new EntityField();
@@ -139,12 +188,34 @@ class ClassParseManager {
             entityField.notNull = getBoolean(jsonObject, "notNull");
             entityField.target = getString(jsonObject, "target");
             entityField.type = new FieldType(getString(jsonObject, "type"));
+
+            // links
+            if (entityField.type.isEnum()) {
+                entityField.links = new ArrayList<>();
+                String targetName = "enum" + HumpHelper.lineToHump("_" + entityField.name);
+                JsonElement targetJsonElement = sourceJsonObj.get(targetName);
+                if (targetJsonElement != null && targetJsonElement.isJsonArray()) {
+                    JsonArray fieldLinks = (JsonArray) targetJsonElement;
+                    for (JsonElement linkObj : fieldLinks) {
+                        if (linkObj.isJsonObject()) {
+                            JsonObject linkJsonObj = linkObj.getAsJsonObject();
+                            FieldLink fieldLink = new FieldLink();
+                            fieldLink.desc = getString(linkJsonObj, "desc");
+                            fieldLink.name = getString(linkJsonObj, "name");
+                            fieldLink.type = getString(linkJsonObj, "type");
+                            fieldLink.value = getString(linkJsonObj, "value");
+                            entityField.links.add(fieldLink);
+                        }
+                    }
+                }
+            }
+
             return entityField;
         }
         return null;
     }
 
-    private void collectApiDeatilInfo(ApiDetail apiDetail, JsonObject apiDetailJsonObj) {
+    private void collectApiDetailInfo(ApiDetail apiDetail, JsonObject apiDetailJsonObj) {
         apiDetail.desc = getString(apiDetailJsonObj, "desc");
         apiDetail.domain = getString(apiDetailJsonObj, "domain");
         apiDetail.httpType = getString(apiDetailJsonObj, "httpType");

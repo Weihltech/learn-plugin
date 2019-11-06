@@ -13,6 +13,7 @@ dependencies {
     implementation gradleApi()
     implementation 'com.android.tools.build:gradle:3.5.0'
     implementation 'com.google.googlejavaformat:google-java-format:1.7'
+    implementation 'com.squareup.okhttp3:okhttp:4.2.2'
 }
 
 // 插件打包上传共享
@@ -44,35 +45,32 @@ uploadArchives {
 //    }
 //})
 
-import java.text.SimpleDateFormat
-
-tasks.getByName('uploadArchives').doFirst(new Action<Task>() {
-    @Override
-    void execute(Task task) {
-        // 创建Config文件, 把版本号写进该文件
-        def proguardPath = "${project.projectDir.absolutePath}/src/main/java/com/vsoontech/plugin/apigenerate"
-        File dir = new File(proguardPath)
-        File mark = new File(dir, 'Config.java')
-        if (!dir.exists()) {
-            dir.mkdirs()
-        }
-        if (!mark.exists()) {
-            mark.createNewFile()
-        }
-        def dateFormat = new SimpleDateFormat("yyyy-MM-dd")
-        def now = dateFormat.format(new Date())
-        def source = "package com.vsoontech.plugin.apigenerate;\n" +
-                "\n" +
-                "/**\n" +
-                " * Auto Created File ${now}\n" +
-                " */\n" +
-                "public class Config {\n" +
-                "  public final static String PLUGIN_VERSION = \"${version}\";\n" +
-                "  public static String apiProject = \"${version}\";\n" +
-                "  public static String apiVersion = \"${version}\";\n" +
-                "  public static String genOutSrc = \"${version}\";\n" +
-                "  public static String genOutSrcPath = \"${version}\";\n" +
-                "}"
-        mark.write(source, 'UTF-8')
-    }
-})
+// 打包上传时先输出必要文件，暂时不需要
+//import java.text.SimpleDateFormat
+//
+//tasks.getByName('uploadArchives').doFirst(new Action<Task>() {
+//    @Override
+//    void execute(Task task) {
+//        // 创建Config文件, 把版本号写进该文件
+//        def proguardPath = "${project.projectDir.absolutePath}/src/main/java/com/vsoontech/plugin/apigenerate"
+//        File dir = new File(proguardPath)
+//        File mark = new File(dir, 'Config.java')
+//        if (!dir.exists()) {
+//            dir.mkdirs()
+//        }
+//        if (!mark.exists()) {
+//            mark.createNewFile()
+//        }
+//        def dateFormat = new SimpleDateFormat("yyyy-MM-dd")
+//        def now = dateFormat.format(new Date())
+//        def source = "package com.vsoontech.plugin.apigenerate;\n" +
+//                "\n" +
+//                "/**\n" +
+//                " * Auto Created File ${now}\n" +
+//                " */\n" +
+//                "public class Config {\n" +
+//                "  public final static String PLUGIN_VERSION = \"${version}\";\n" +
+//                "}"
+//        mark.write(source, 'UTF-8')
+//    }
+//})

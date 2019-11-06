@@ -13,7 +13,7 @@ public class HumpHelper {
      * 下划线转驼峰
      */
     public static String lineToHump(String str) {
-        str = str.toLowerCase();
+//        str = str.toLowerCase();
         Matcher matcher = linePattern.matcher(str);
         StringBuffer sb = new StringBuffer();
         while (matcher.find()) {
@@ -36,5 +36,26 @@ public class HumpHelper {
         return sb.toString();
     }
 
+    public static String convertTargetName(String target) {
+        if (!isEmpty(target)) {
+            String tName = "_" + target;
+            if (tName.endsWith("list")
+                || tName.endsWith("List")) {
+                tName = tName.substring(0, tName.length() - 4);
+                if (tName.length() == 1) {
+                    tName = "_item";
+                }
+            }
+            return lineToHump(tName);
+        }
+        return "UnKnow";
+    }
 
+    private static boolean isEmpty(CharSequence s) {
+        if (s == null) {
+            return true;
+        } else {
+            return s.length() == 0;
+        }
+    }
 }

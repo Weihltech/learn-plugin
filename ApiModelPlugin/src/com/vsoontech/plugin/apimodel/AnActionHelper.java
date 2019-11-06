@@ -9,6 +9,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiManager;
 
+import java.io.File;
+
 public class AnActionHelper {
 
     private static AnActionEvent anActionEvent;
@@ -40,4 +42,18 @@ public class AnActionHelper {
     public static ApiProperties getApiProperties() {
         return mApiProperties;
     }
+
+
+//    private static ApiProperties loadApiProp() {
+//        try {
+//            String projectPath = AnActionHelper.getProject().getBasePath();
+//            String pPath = (projectPath + "/app/build/generated/api/source/api.properties");
+//            Logc.d("ApiProperties : " + pPath);
+//            String apiPropJson = FileUtils.readFileToString(new File(pPath), StandardCharsets.UTF_8);
+//            return new Gson().fromJson(apiPropJson, ApiProperties.class);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+//    }
 }

@@ -4,12 +4,14 @@ import com.vsoontech.plugin.apimodel.Logc;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseWheelEvent;
 
 import static com.intellij.openapi.util.text.StringUtil.isEmpty;
 
@@ -18,6 +20,11 @@ public class JTextFieldHintAction {
     private String hintText;
     private JTextField jTextField;
     private Color mForeground;
+    private CallBack mCallBack;
+
+    public interface CallBack {
+        void inputChange(String input);
+    }
 
     public JTextFieldHintAction(JTextField textField, String hintText) {
         this.jTextField = textField;
@@ -29,7 +36,6 @@ public class JTextFieldHintAction {
             jTextField.setCaretPosition(0);
             jTextField.setForeground(Color.GRAY);
             jTextField.addMouseListener(getMouseListener());
-
         }
     }
 
@@ -37,13 +43,25 @@ public class JTextFieldHintAction {
         return new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
-                Logc.d("mousePressed !" + e.paramString());
                 String txt = getText();
-                if (isEmpty(txt)) {
-                    jTextField.setCaretPosition(0);
-                }
+                Logc.d("mousePressed !" + txt);
+                jTextField.setCaretPosition(isEmpty(txt) ? 0 : txt.length());
+            }
+
+            @Override
+            public void mouseWheelMoved(MouseWheelEvent e) {
+                Logc.d("mouseWheelMoved !" );
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent e) {
+                Logc.d("mouseMoved !" );
             }
         };
+    }
+
+    public void setInputCallBack(CallBack callBack) {
+        this.mCallBack = callBack;
     }
 
     class HintDocument extends PlainDocument {
@@ -58,6 +76,8 @@ public class JTextFieldHintAction {
                 jTextField.setForeground(mForeground);
             }
             super.insertString(offs, str, a);
+
+            onInputChange();
         }
 
         @Override
@@ -71,10 +91,30 @@ public class JTextFieldHintAction {
                 jTextField.setCaretPosition(0);
             }
             ignoreRemove = false;
+
+            onInputChange();
         }
     }
 
-    private boolean isHintText() {
+    private void onInputChange() {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                if (mCallBack != null) {
+                    mCallBack.inputChange(getText());
+                }
+            }
+        }).start();
+
+    }
+
+    public boolean isHintText() {
         String temp = jTextField.getText();
         return temp.equals(hintText);
     }

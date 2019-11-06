@@ -1,7 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3e74d6b4-ea7b-493a-808e-6ef4705f4e20" name="Default Changelist" comment="" />
+    <list default="true" id="3e74d6b4-ea7b-493a-808e-6ef4705f4e20" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/HumpHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ApiModelPlugin.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ApiModelPlugin.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/AmGenerateAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/AmGenerateAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/AmNewClassAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/AmNewClassAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/AnActionHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/AnActionHelper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ApiModelConvert$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ApiModelConvert$CallBack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ApiModelConvert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ApiModelGenerate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ApiModelGenerate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ApiProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ApiProperties.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/Logc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/Logc.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/AssignRespsDialog$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/AssignRespsDialog$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/AssignRespsDialog$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/AssignRespsDialog$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/AssignRespsDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/AssignRespsDialog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/CreateModelDialog$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/CreateModelDialog$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/CreateModelDialog$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/CreateModelDialog$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/CreateModelDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/CreateModelDialog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/bean/ItemModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/bean/ItemModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/comm/JTextFieldHintAction$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/comm/JTextFieldHintAction$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/comm/JTextFieldHintAction$HintDocument.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/comm/JTextFieldHintAction$HintDocument.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/comm/JTextFieldHintAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ApiModelPlugin/com/vsoontech/plugin/apimodel/ui/comm/JTextFieldHintAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vsoontech/plugin/AmGenerateAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vsoontech/plugin/AmGenerateAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vsoontech/plugin/AmNewClassAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vsoontech/plugin/AmNewClassAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/AnActionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/AnActionHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ApiModelConvert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ApiModelGenerate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ApiModelGenerate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ApiProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ApiProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/Logc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/Logc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ui/AssignRespsDialog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ui/AssignRespsDialog.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ui/AssignRespsDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ui/AssignRespsDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ui/CreateModelDialog.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ui/CreateModelDialog.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ui/CreateModelDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ui/CreateModelDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ui/bean/ItemModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ui/bean/ItemModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ui/comm/JTextFieldHintAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ui/comm/JTextFieldHintAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ui/renderer/ItemModelRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel/ui/renderer/ItemModelRenderer.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +52,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\Android\workspace\ApiModelPlugin\.idea" />
+      </set>
+    </option>
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -24,13 +70,18 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1SDy7lWAUzWxJwyoWpZpnuLo0CA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="592" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/build/generated/source/buildConfig/release" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/vsoontech/plugin/apimodel" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.22150736" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="PsiViewer.ProjectComponent">
     <option name="HIGHLIGHT" value="false" />
@@ -46,6 +97,7 @@
       <recent name="com.vsoontech.plugin.apimodel" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Android\workspace\ApiModelPlugin\src\com\vsoontech\plugin\apimodel" />
       <recent name="D:\Android\workspace\ApiModelPlugin\build\generated\source\buildConfig\release" />
       <recent name="D:\Android\workspace\ApiModelPlugin\src" />
       <recent name="D:\Android\workspace\ApiModelPlugin" />
@@ -94,6 +146,46 @@
       <option name="presentableId" value="Default" />
       <updated>1571112295145</updated>
     </task>
+    <task id="LOCAL-00001" summary="Create Project">
+      <created>1571732342688</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571732342688</updated>
+    </task>
+    <task id="LOCAL-00002" summary="m-Optimize">
+      <created>1571996681825</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571996681825</updated>
+    </task>
+    <task id="LOCAL-00003" summary="m-Optimize">
+      <created>1572233206552</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572233206552</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create Project" />
+    <MESSAGE value="m-Optimize" />
+    <option name="LAST_COMMIT_MESSAGE" value="m-Optimize" />
   </component>
 </project>

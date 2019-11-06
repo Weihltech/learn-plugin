@@ -1,7 +1,8 @@
 package com.vsoontech.plugin.apigenerate.entity;
 
 public class ApiProject {
-   public int version;
+   public String project;
+   public String projectId;
+   public String projectVersion;
    public String desc;
-   public String dir;
 }

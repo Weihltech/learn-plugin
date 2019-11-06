@@ -1,190 +1,159 @@
 package com.vsoontech.plugin;
 
-import com.vsoontech.plugin.api.LiveCourseList2Resp;
-import com.vsoontech.plugin.api.LiveMaybeList1Resp;
-import com.vsoontech.plugin.api.LiveMaybeListResp;
+import com.vsoontech.plugin.api.AddressConsts;
+import com.vsoontech.plugin.api.AddressResp;
 import java.util.ArrayList;
 
+/**
+ * Automatically generated file. DO NOT MODIFY !
+ * : 移动端直播 - 安卓用户维护收货地址
+ *
+ * @author ApiGenerate
+ * @since 2019-11-06 10:09
+ */
 public class AModel {
 
-    // 推荐列表 ; NotNull : true
-    public ArrayList<Recommend> recommendList;
-    // 购买列表 ; NotNull : true
-    public ArrayList<Purchased> purchasedList;
+    // 1：成功；0：失败
+    private int result;
+    /**
+     * op字符串常量<br>
+     * 说明: {@link AddressConsts#OP_STR} ; <br>
+     */
+    private String opStr;
+    /**
+     * 操作类型<br>
+     * 获取: {@link AddressConsts#OPTION_GET} ; <br>
+     * 添加: {@link AddressConsts#OPTION_ADD} ; <br>
+     * 修改: {@link AddressConsts#OPTION_MODIFY} ; <br>
+     * 删除: {@link AddressConsts#OPTION_DELETE} ; <br>
+     * 其他: {@link AddressConsts#OPTION_OTHER} ; <br>
+     */
+    private int op;
+    // 增删改返回的地址id
+    private int opId;
+    // list
+    private ArrayList<Item> list;
+    /**
+     * op其他<br>
+     * op其他: {@link AddressConsts#OP_OTHER_INT} ; <br>
+     */
+    private int opOther;
 
-    public AModel(LiveMaybeListResp livemaybelistresp) {
-        if (livemaybelistresp.purchasedList != null && !livemaybelistresp.purchasedList.isEmpty()) {
-            this.purchasedList = new ArrayList<>();
-            for (LiveMaybeListResp.Purchased purchased : livemaybelistresp.purchasedList) {
-                this.purchasedList.add(new Purchased(purchased));
+    public AModel(AddressResp addressresp) {
+        this.op = addressresp.op;
+        this.result = addressresp.result;
+        this.opId = addressresp.opId;
+        if (addressresp.list != null && !addressresp.list.isEmpty()) {
+            this.list = new ArrayList<>();
+            for (AddressResp.Item item : addressresp.list) {
+                this.list.add(new Item(item));
             }
         }
-        if (livemaybelistresp.recommendList != null && !livemaybelistresp.recommendList.isEmpty()) {
-            this.recommendList = new ArrayList<>();
-            for (LiveMaybeListResp.Recommend recommend : livemaybelistresp.recommendList) {
-                this.recommendList.add(new Recommend(recommend));
-            }
-        }
-
-        onConstructor();
+        this.opStr = addressresp.opStr;
+        this.opOther = addressresp.opOther;
+        onAModelConstructor();
     }
 
-    public AModel(LiveMaybeList1Resp livemaybelist1resp) {
-        if (livemaybelist1resp.purchasedList != null && !livemaybelist1resp.purchasedList.isEmpty()) {
-            this.purchasedList = new ArrayList<>();
-            for (LiveMaybeList1Resp.Purchased purchased : livemaybelist1resp.purchasedList) {
-                this.purchasedList.add(new Purchased(purchased));
-            }
-        }
-        if (livemaybelist1resp.recommendList != null && !livemaybelist1resp.recommendList.isEmpty()) {
-            this.recommendList = new ArrayList<>();
-            for (LiveMaybeList1Resp.Recommend recommend : livemaybelist1resp.recommendList) {
-                this.recommendList.add(new Recommend(recommend));
-            }
-        }
-
-        onConstructor();
+    /**
+     * 为避免构造函数内非插件生成的代码被覆盖，如有特殊操作，可将代码添加到此方法中;
+     */
+    private void onAModelConstructor() {
     }
 
-    public AModel(LiveCourseList2Resp livecourselist2resp) {
-        if (livecourselist2resp.purchasedList != null && !livecourselist2resp.purchasedList.isEmpty()) {
-            this.purchasedList = new ArrayList<>();
-            for (LiveCourseList2Resp.Purchased purchased : livecourselist2resp.purchasedList) {
-                this.purchasedList.add(new Purchased(purchased));
-            }
-        }
-        if (livecourselist2resp.recommendList != null && !livecourselist2resp.recommendList.isEmpty()) {
-            this.recommendList = new ArrayList<>();
-            for (LiveCourseList2Resp.Recommend recommend : livecourselist2resp.recommendList) {
-                this.recommendList.add(new Recommend(recommend));
-            }
-        }
-
-        onConstructor();
+    public int getResult() {
+        return result;
     }
 
-    void onConstructor() {// do Something
+    public String getOpStr() {
+        return opStr;
     }
 
-    public class Recommend {
-
-        // 开课时间 ; NotNull : true
-        public String openTime;
-        // 课程名称 ; NotNull : true
-        public String title;
-        // 是否启用优惠价 [true - 用, false - 不用 ; NotNull : true
-        public String isDiscount;
-        // 教师列表 ; NotNull : true
-        public ArrayList<Teacher> teacherList;
-        // 教授 --- 测试重用对象 ; NotNull : true
-        public Teacher proList;
-
-        public Recommend(LiveMaybeListResp.Recommend recommend) {
-            this.openTime = recommend.openTime;
-            this.title = recommend.title;
-            this.isDiscount = recommend.isDiscount;
-            if (recommend.teacherList != null && !recommend.teacherList.isEmpty()) {
-                this.teacherList = new ArrayList<>();
-                for (LiveMaybeListResp.Teacher teacher : recommend.teacherList) {
-                    this.teacherList.add(new Teacher(teacher));
-                }
-            }
-
-            onConstructor();
-        }
-
-        public Recommend(LiveMaybeList1Resp.Recommend recommend) {
-            this.openTime = recommend.openTime;
-            this.title = recommend.title;
-            this.isDiscount = recommend.isDiscount;
-            if (recommend.teacherList != null && !recommend.teacherList.isEmpty()) {
-                this.teacherList = new ArrayList<>();
-                for (LiveMaybeList1Resp.Teacher teacher : recommend.teacherList) {
-                    this.teacherList.add(new Teacher(teacher));
-                }
-            }
-
-            onConstructor();
-        }
-
-        public Recommend(LiveCourseList2Resp.Recommend recommend) {
-            this.openTime = recommend.openTime;
-            this.title = recommend.title;
-            this.isDiscount = recommend.isDiscount;
-            if (recommend.teacherList != null && !recommend.teacherList.isEmpty()) {
-                this.teacherList = new ArrayList<>();
-                for (LiveCourseList2Resp.Teacher teacher : recommend.teacherList) {
-                    this.teacherList.add(new Teacher(teacher));
-                }
-            }
-            this.proList = new Teacher(recommend.proList);
-            onConstructor();
-        }
-
-        void onConstructor() {// do Something
-        }
+    public int getOp() {
+        return op;
     }
 
-    public class Teacher {
-
-        // 1主讲老师  2辅导老师 ; NotNull : true
-        public int type;
-        // 老师名字 ; NotNull : true
-        public String name;
-
-        public Teacher(LiveMaybeListResp.Teacher teacher) {
-            this.type = teacher.type;
-            this.name = teacher.name;
-            onConstructor();
-        }
-
-        public Teacher(LiveMaybeList1Resp.Teacher teacher) {
-            this.type = teacher.type;
-            this.name = teacher.name;
-            onConstructor();
-        }
-
-        public Teacher(LiveCourseList2Resp.Teacher teacher) {
-            this.type = teacher.type;
-            this.name = teacher.name;
-            onConstructor();
-        }
-
-        void onConstructor() {// do Something
-        }
+    public int getOpId() {
+        return opId;
     }
 
-    public class Purchased {
+    public ArrayList<Item> getList() {
+        return list;
+    }
 
-        // 课程id ; NotNull : true
-        public int liveCourseId;
-        // 科目 ; NotNull : true
-        public String subject;
-        // 是否神 ; NotNull : true
-        public boolean isGod;
+    public int getOpOther() {
+        return opOther;
+    }
 
-        public Purchased(LiveMaybeListResp.Purchased purchased) {
-            this.liveCourseId = purchased.liveCourseId;
-            this.subject = purchased.subject;
-            this.isGod = purchased.isGod;
-            onConstructor();
+    /**
+     * Automatically generated file. DO NOT MODIFY !
+     */
+    public static class Item {
+
+        // 数据id
+        private int id;
+        // 收货人
+        private String consignee;
+        // 邮政编码
+        private String postalCode;
+        // 省
+        private String province;
+        // 市
+        private String city;
+        // 区
+        private String country;
+        // 详细地址
+        private String detail;
+        // 电话
+        private String telNumber;
+
+        public Item(AddressResp.Item item) {
+            this.id = item.id;
+            this.consignee = item.consignee;
+            this.postalCode = item.postalCode;
+            this.province = item.province;
+            this.city = item.city;
+            this.country = item.country;
+            this.detail = item.detail;
+            this.telNumber = item.telNumber;
+            onItemConstructor();
         }
 
-        public Purchased(LiveMaybeList1Resp.Purchased purchased) {
-            this.liveCourseId = purchased.liveCourseId;
-            this.subject = purchased.subject;
-            this.isGod = purchased.isGod;
-            onConstructor();
+        /**
+         * 为避免构造函数内非插件生成的代码被覆盖，如有特殊操作，可将代码添加到此方法中;
+         */
+        private void onItemConstructor() {
         }
 
-        public Purchased(LiveCourseList2Resp.Purchased purchased) {
-            this.liveCourseId = purchased.liveCourseId;
-            this.subject = purchased.subject;
-            this.isGod = purchased.isGod;
-            onConstructor();
+        public int getId() {
+            return id;
         }
 
-        void onConstructor() {// do Something
+        public String getConsignee() {
+            return consignee;
+        }
+
+        public String getPostalCode() {
+            return postalCode;
+        }
+
+        public String getProvince() {
+            return province;
+        }
+
+        public String getCity() {
+            return city;
+        }
+
+        public String getCountry() {
+            return country;
+        }
+
+        public String getDetail() {
+            return detail;
+        }
+
+        public String getTelNumber() {
+            return telNumber;
         }
     }
 }

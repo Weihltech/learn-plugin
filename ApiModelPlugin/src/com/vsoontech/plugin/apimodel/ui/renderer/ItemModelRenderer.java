@@ -13,16 +13,22 @@ public class ItemModelRenderer extends JLabel implements ListCellRenderer {
     private ItemModel itemModel;
     private static Color mBackgroundNorColor = new Color(60, 63, 65);
     private static Color mForegroundNorColor = new Color(60, 63, 65);
-    private static Color mBackgroundSelColor = new Color(85, 116, 175);
+    private static Color mBackgroundSelColor = new Color(77, 102, 145);
     private static Color mForegroundSelColor = new Color(242, 251, 255);
 
-    private String getLabelText(String name, String desc) {
+    private String getLabelText(String name, String desc, int lightLength) {
 
         StringBuilder textBuilder = new StringBuilder();
         textBuilder.append("<html><body>");
 
         if (!isEmpty(name)) {
-            textBuilder.append(name);
+            if (lightLength > 0 && lightLength <= name.length()) {
+                String lightTxt = name.substring(0, lightLength);
+                String txt = name.substring(lightLength);
+                textBuilder.append("<font color='#FFB011'>").append(lightTxt).append("</font>").append(txt);
+            } else {
+                textBuilder.append(name);
+            }
         }
 
         if (!isEmpty(desc)) {
@@ -35,7 +41,7 @@ public class ItemModelRenderer extends JLabel implements ListCellRenderer {
     }
 
     public ItemModelRenderer() {
-        setText(getLabelText("ErrorResp.Java ", "UnKnow Resp.Java File !"));
+        setText(getLabelText("ErrorResp.Java ", "UnKnow Resp.Java File !", 0));
         mBackgroundNorColor = getBackground();
         mForegroundNorColor = getForeground();
         setOpaque(true);
@@ -53,7 +59,7 @@ public class ItemModelRenderer extends JLabel implements ListCellRenderer {
 
         itemModel = (ItemModel) value;
         if (itemModel != null) {
-            setText(getLabelText(itemModel.name, itemModel.desc));
+            setText(getLabelText(itemModel.name, itemModel.desc, itemModel.lightLength));
         }
 
         setForeground(itemModel.isSel ? mForegroundSelColor : mForegroundNorColor);

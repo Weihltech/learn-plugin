@@ -1,19 +1,18 @@
 package com.vsoontech.plugin;
 
-import com.android.annotations.NonNull;
 import com.android.build.gradle.AppPlugin;
 import com.android.build.gradle.internal.VariantManager;
-import com.android.build.gradle.internal.core.GradleVariantConfiguration;
 import com.android.build.gradle.internal.crash.CrashReporting;
 import com.android.build.gradle.internal.scope.VariantScope;
-import com.android.build.gradle.internal.tasks.TaskInputHelper;
 import com.android.build.gradle.tasks.GenerateBuildConfig;
-import com.vsoontech.plugin.apigenerate.ApiProperties;
-import com.vsoontech.plugin.apigenerate.Config;
+import com.vsoontech.plugin.apigenerate.ApiConfig;
 import com.vsoontech.plugin.apigenerate.manager.ApiGenerator;
 import com.vsoontech.plugin.apigenerate.utils.Logc;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import org.apache.commons.io.FileUtils;
 import org.gradle.api.Action;
 import org.gradle.api.Plugin;
 import org.gradle.api.Project;
@@ -23,80 +22,75 @@ import org.gradle.api.tasks.TaskProvider;
 
 public class ApiGeneratePlugin implements Plugin<Project> {
 
-    HashMap<String, String> opMap = new HashMap<>();
 
     @Override
     public void apply(Project project) {
+        ApiConfig.init(project);
+        if (Logc.openLog()) {
+            Logc.d("preRun !");
+        }
+
+        // 创建Task
+        HashMap<String, String> opMap = new HashMap<>();
         opMap.put("group", "apiGenerate");
-
-        new ApiProperties(project).read();
-
+        TaskContainer taskContainer = project.getTasks();
         opMap.put("name", "logConfig");
-        project.getTasks().create(opMap).doLast(
-            task -> Logc.d("Config : apiId = " + Config.apiProject
-                + " ; apiVersion = " + Config.apiVersion
-                + " ; apiOutSrc = " + Config.genOutSrc
-                + " ; genOutSrcPath = " + Config.genOutSrcPath));
+        taskContainer.create(opMap).doLast(
+            task -> {
+                // 打印相关配置信息，用于核对参数
+                ApiConfig.print();
+            }
+        );
+        opMap.put("name", "run");
+        Action<Task> generateApiTask = task -> {
+            // 必须： ApiConfig.init(project); 之后
+            new ApiGenerator().run();
+        };
+        taskContainer.create(opMap).doFirst(generateApiTask);
 
-        androidPlugin(project);
+        // 项目 action by [reBuild ,switch Variants] , etc.
+//        Task preBuildTask = taskContainer.findByName("preBuild");
+//        if (preBuildTask != null) {
+//            preBuildTask.doLast(task -> {
+//                try {
+//                    File apiGenDir = new File(task.getProject().getBuildDir() + "\\generated\\api");
+//                    FileUtils.cleanDirectory(apiGenDir);
+//                    Logc.d("[Clean ApiGeneratedDir ].");
+//                } catch (Exception e) {
+//                    Logc.e("[Clean ApiGeneratedDir ]." + e.getMessage());
+//                }
+//            });
+//        }
+
+        // 项目 action by  [BuildConfigTask]
+
+        attachedToBuildConfigTask(project, generateApiTask);
+
     }
 
-
-    private void androidPlugin(Project project) {
+    private void attachedToBuildConfigTask(Project project, Action<Task> generateApiTask) {
         project.afterEvaluate(project1 -> CrashReporting.runAction(
             () -> {
-                AppPlugin appPlugin = project.getPlugins().findPlugin(AppPlugin.class);
-                if (appPlugin != null) {
-                    VariantManager variantManager = appPlugin.getVariantManager();
-                    List<VariantScope> scopeList = variantManager.getVariantScopes();
-                    for (VariantScope scope : scopeList) {
-                        if ("debug".equals(scope.getFullVariantName())
-                            || "release".equals(scope.getFullVariantName())) {
-                            createApiGenerateTask(project, scope);
+                try {
+                    AppPlugin appPlugin = project.getPlugins().findPlugin(AppPlugin.class);
+                    if (appPlugin != null) {
+                        VariantManager variantManager = appPlugin.getVariantManager();
+                        List<VariantScope> scopeList = variantManager.getVariantScopes();
+                        for (VariantScope scope : scopeList) {
+                            if (scope.getFullVariantName().endsWith("ebug")
+                                || scope.getFullVariantName().endsWith("elease")) {
+                                TaskProvider taskProvider = scope.getTaskContainer().getGenerateBuildConfigTask();
+                                if (taskProvider != null) {
+                                    ((Task) taskProvider.get()).doLast(generateApiTask);
+                                }
+                            }
                         }
                     }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }));
     }
 
-    private void createApiGenerateTask(Project mProject, @NonNull VariantScope scope) {
-//        TaskFactoryImpl taskFactory = new TaskFactoryImpl(mProject.getTasks());
-//        TaskProvider<ApiGenerateTask> apiGenerateTaskTaskProvider =
-//            taskFactory.register(new ApiGenerateTask.CreationAction(scope));
-//
-//        ApiGenerateTask apiGenTask = apiGenerateTaskTaskProvider.get();
-//        TaskProvider<? extends GenerateBuildConfig> configTaskProvider = scope.getTaskContainer()
-//            .getGenerateBuildConfigTask();
-//        if (configTaskProvider != null) {
-//            Task configTask = configTaskProvider.get();
-//            configTask.doLast(task -> apiGenTask.taskAction());
-//        }
 
-        GradleVariantConfiguration variantConfiguration = scope.getVariantData().getVariantConfiguration();
-        String appPackageName = TaskInputHelper.memoize(variantConfiguration::getApplicationId).get();
-        String buildConfigSrcOutputDir = scope.getBuildConfigSourceOutputDir().getAbsolutePath();
-        String projectDir = scope.getGlobalScope().getProject().getProjectDir().getAbsolutePath();
-
-        TaskContainer tTaskContainer = mProject.getTasks();
-        opMap.put("name", "generate" + scope.getFullVariantName());
-        Action<Task> generateApiTask = task -> {
-            new ApiGenerator(appPackageName,
-                buildConfigSrcOutputDir,
-                projectDir).generate();
-        };
-
-        tTaskContainer.create(opMap).doLast(generateApiTask);
-
-        TaskProvider<? extends GenerateBuildConfig> configTaskProvider = scope.getTaskContainer()
-            .getGenerateBuildConfigTask();
-        if (configTaskProvider != null) {
-            Task configTask = configTaskProvider.get();
-            configTask.doFirst(task -> {
-                Config.genOutSrcPath = "app\\build\\generated\\source\\buildConfig\\" + scope.getFullVariantName();
-                new ApiProperties(mProject).save();
-            });
-            configTask.doLast(generateApiTask);
-        }
-
-    }
 }

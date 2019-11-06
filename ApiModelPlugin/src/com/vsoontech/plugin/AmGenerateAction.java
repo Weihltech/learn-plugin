@@ -17,6 +17,9 @@ import com.vsoontech.plugin.apimodel.ui.AssignRespsDialog;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Objects;
 
 public class AmGenerateAction extends BaseGenerateAction {
 
@@ -37,37 +40,22 @@ public class AmGenerateAction extends BaseGenerateAction {
         PsiClass modelPsiClass = getTargetClass(editor, mFile);
         Logc.d("target model : " + modelPsiClass.getName());
 
-        PsiDirectory pkgPsiDirectory = PsiHelper.findGenOutSrcPsiDirectory(
+        // Resp File Dir
+        PsiDirectory respPsiDirectory = PsiHelper.findGenOutSrcPsiDirectory(
                 mFile.getContainingDirectory(), project.getName(), AnActionHelper.getApiProperties().getApiOutSrc());
 
-        if (pkgPsiDirectory != null) {
-            ArrayList<PsiClass> respPsiClassList = collectRespPsiClass(pkgPsiDirectory);
-            AssignRespsDialog assignRespsDialog = new AssignRespsDialog(modelPsiClass, respPsiClassList);
+        if (respPsiDirectory != null) {
+            AssignRespsDialog assignRespsDialog = new AssignRespsDialog(modelPsiClass, respPsiDirectory);
             assignRespsDialog.setSize(650, 500);
             assignRespsDialog.setLocationRelativeTo(null);
             assignRespsDialog.setVisible(true);
         }
     }
 
-
-    private ArrayList<PsiClass> collectRespPsiClass(PsiDirectory pkgPsiDirectory) {
-        if (pkgPsiDirectory != null) {
-            Logc.d(pkgPsiDirectory.getName());
-            ArrayList<PsiClass> psiClassList = new ArrayList<>();
-            for (PsiFile psiFile : pkgPsiDirectory.getFiles()) {
-                if (psiFile.getName().endsWith("Resp.java") && psiFile instanceof PsiJavaFile) {
-                    PsiJavaFile psiJavaFile = (PsiJavaFile) psiFile;
-                    psiClassList.add(psiJavaFile.getClasses()[0]);
-                }
-            }
-            return psiClassList;
-        }
-        return null;
-    }
-
     @Override
     public void actionPerformed(@NotNull AnActionEvent anActionEvent) {
         AnActionHelper.init(anActionEvent);
+        Logc.outputLogFile(AnActionHelper.getProject().getBasePath());
         generateModel();
     }
 }

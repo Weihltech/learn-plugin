@@ -10,6 +10,7 @@ public class ItemModel {
     public String name;
     public boolean isSel;
     public String desc;
+    public int lightLength;
 
     public ItemModel(PsiClass mPsiClass, String name) {
         this.mPsiClass = mPsiClass;

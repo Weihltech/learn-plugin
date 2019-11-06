@@ -4,31 +4,32 @@ import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.impl.source.PsiJavaFileImpl;
 
+import java.util.Arrays;
+
 import static com.intellij.openapi.util.text.StringUtil.isEmpty;
 
 public class PsiHelper {
     public static PsiDirectory findGenOutSrcPsiDirectory(PsiDirectory psiDirectory, String projectName, String pkg) {
-//        Logc.d("--- projectName = " + projectName + " ; psiFile = " + psiFile + " ; pkg = " + pkg);
         if (psiDirectory != null
                 && !isEmpty(projectName) && !isEmpty(pkg)) {
-//            Logc.d("--- projectName = " + projectName);
+            Logc.d("--- projectName = " + projectName + " ; psiFile = " + psiDirectory.getName() + " ; pkg = " + pkg);
             while (psiDirectory != null
                     && !projectName.equals(psiDirectory.getName())) {
                 psiDirectory = psiDirectory.getParent();
             }
 
             if (psiDirectory != null) {
-//                Logc.d("--- Project : " + psiDirectory.getName());
+                Logc.d("--- Project : " + psiDirectory.getName());
                 String genOutSrcPath = AnActionHelper.getApiProperties().getGenOutSrcPath();
-//                Logc.d("--- genOutSrcPath : " + genOutSrcPath);
+                Logc.d("--- genOutSrcPath : " + genOutSrcPath);
                 String[] srcArgs = genOutSrcPath.split("\\.");
-//                Logc.d("--- srcArgs : " + Arrays.toString(srcArgs));
+                Logc.d("--- srcArgs : " + Arrays.toString(srcArgs));
                 for (String srcArg : srcArgs) {
                     psiDirectory = psiDirectory.findSubdirectory(srcArg);
                     if (psiDirectory == null) {
                         break;
                     }
-//                    Logc.d("---> " + psiDirectory.getName());
+                    Logc.d("---> " + psiDirectory.getName());
                 }
                 return psiDirectory;
             }

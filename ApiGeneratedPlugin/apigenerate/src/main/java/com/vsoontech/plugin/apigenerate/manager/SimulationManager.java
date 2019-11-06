@@ -4,6 +4,7 @@ import static org.apache.http.util.TextUtils.isEmpty;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.vsoontech.plugin.apigenerate.ApiConfig;
 import com.vsoontech.plugin.apigenerate.entity.ApiDetail;
 import com.vsoontech.plugin.apigenerate.entity.EntityClass;
 import com.vsoontech.plugin.apigenerate.entity.EntityField;
@@ -20,13 +21,25 @@ class SimulationManager {
     private HashMap<String, File> assetsJsonFiles;
     private int tValue;
 
-    public SimulationManager(String projectDir) {
+    SimulationManager() {
         assetsJsonFiles = new HashMap<>();
 
-        checkAssetsFileDir(projectDir);
+        // 创建 assets 文件夹
+        // D:\Android\workspace\OwlClass\app\src\main\assets
+        assetsFileDir = new File(ApiConfig.assetsDir);
+        if (!assetsFileDir.exists() && assetsFileDir.mkdirs()) {
+            Logc.d(assetsFileDir.getAbsolutePath());
+        }
 
         loadAssetsJsonFiles();
 
+    }
+
+    void logStart() {
+        if (openLog()) {
+            Logc.d("");
+            Logc.d("@ SimulationManager <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-");
+        }
     }
 
     private void loadAssetsJsonFiles() {
@@ -41,26 +54,21 @@ class SimulationManager {
         }
     }
 
-    private void checkAssetsFileDir(String projectDir) {
-        // 创建 assets 文件夹
-        // D:\Android\workspace\OwlClass\app\src\main\assets
-        String assDir = projectDir + "\\src\\main\\assets\\";
-        assetsFileDir = new File(assDir);
-        if (!assetsFileDir.exists() && assetsFileDir.mkdirs()) {
-            Logc.d(assetsFileDir.getAbsolutePath());
-        }
-    }
 
-    public void generate(ApiDetail apiDetail) throws IOException {
+    void generate(ApiDetail apiDetail) throws IOException {
 
         if (apiDetail != null
             && apiDetail.reqEntityCls != null
             && !isEmpty(apiDetail.reqEntityCls.className)) {
             String reqName = apiDetail.reqEntityCls.className.toLowerCase();
             if (assetsJsonFiles.containsKey(reqName)) {
-                Logc.d("Has [ " + reqName + " ] Simulation Data !");
+                if (openLog()) {
+                    Logc.d("Has [ " + reqName + " ] Simulation Data !");
+                }
             } else {
-                Logc.d("Create New [ " + reqName + " ]");
+                if (openLog()) {
+                    Logc.d("New [ " + reqName + " ] Simulation Data !");
+                }
                 File jsonFile = new File(assetsFileDir, reqName + ".json");
                 String jsonContent = createJsonContent(apiDetail.respEntityCls);
                 FileUtils.writeStringToFile(jsonFile, jsonContent, Charsets.UTF_8, false);
@@ -83,15 +91,31 @@ class SimulationManager {
             && targetEntityCls.getFields() != null
             && !targetEntityCls.getFields().isEmpty()) {
             for (EntityField field : targetEntityCls.getFields()) {
-                if (field.type.isArrayObj()) {
+                if (field.type.isArrayFloat()) {
+                    JsonArray subArray = new JsonArray();
+                    for (int i = 0; i < 3; i++) {
+                        // 数组默认填充三个
+                        subArray.add((float) i + 0.1);
+                    }
+                    jsonObject.add(field.name, subArray);
+                } else if (field.type.isArrayInteger()) {
+                    JsonArray subArray = new JsonArray();
+                    for (int i = 0; i < 3; i++) {
+                        // 数组默认填充三个
+                        subArray.add(i);
+                    }
+                    jsonObject.add(field.name, subArray);
+                } else if (field.type.isArrayString()) {
+                    JsonArray subArray = new JsonArray();
+                    for (int i = 0; i < 3; i++) {
+                        // 数组默认填充三个
+                        subArray.add(i + "_" + field.name);
+                    }
+                    jsonObject.add(field.name, subArray);
+                } else if (field.type.isArrayObj()) {
                     JsonArray subArray = new JsonArray();
                     JsonObject subObj = new JsonObject();
-
-                    Logc.d(field.name + " - " + field.target + " - " + field.type.toString());
                     EntityClass findTargetECls = findTargetEntityCls(field.target, respEntityCls);
-                    if (findTargetECls != null) {
-                        Logc.d("Find cls = " + findTargetECls.className);
-                    }
 
                     collectFields(subObj, respEntityCls, findTargetECls);
                     for (int i = 0; i < 3; i++) {
@@ -128,5 +152,9 @@ class SimulationManager {
             }
         }
         return null;
+    }
+
+    private boolean openLog() {
+        return ApiConfig.sProp == null || ApiConfig.sProp.openLog || ApiConfig.sProp.openSimulationLog;
     }
 }
